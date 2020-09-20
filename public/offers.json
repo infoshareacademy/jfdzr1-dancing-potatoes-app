@@ -1,0 +1,39 @@
+[
+    {
+        "title": "kajak gdansk",
+        "id": 1,
+        "offer": [
+            {
+                "type": "kajak jednoosoby",
+                "numberOfPeople": 1,
+                "price": 15
+            },
+            {
+                "type": "kajak dwusobowy",
+                "numberOfPeople": 2,
+                "price": 25
+            },
+            {
+                "type": "kajak group",
+                "numberOfPeople": 10,
+                "price": 150
+            },
+            {
+                "type": "rowerek 4 osobowy",
+                "numberOfPeople": 4,
+                "price": 75
+            }
+        ],
+
+        "level": "easy",
+        "location": {
+            "city": "gdansk",
+            "river": "motlawa",
+            "postalCode": "80-001",
+            "street": "grobla",
+            "streetNumber": "5"
+        },
+        "imageUrl": "foto.jpg",
+        "description": "blebelebelblelbe"
+    }
+]
