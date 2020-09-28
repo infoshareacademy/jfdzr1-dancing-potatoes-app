@@ -1,28 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import { Button } from '@material-ui/core';
+
 
 function App() {
   fetch('/offers.json')
   .then((r) => {return r.json() })
   .then (x => console.log(x))
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <AppBar position="static">
+      <Toolbar>
+        <Typography variant="h6" >
+          Dancing Potatoes
+          <Button variant="outlined" color='inherit'>Home</Button>
+          <Button variant="outlined" color='inherit'>Ulubione</Button>
+          <Button variant="outlined" color='inherit'>Kayak</Button>
+          <Button variant="outlined" color='inherit'>Mapa</Button>
+        </Typography>
+      </Toolbar>
+      
+    </AppBar>
+
+    </>
   );
 }
 
