@@ -16,8 +16,12 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
-import LogoWioslo from '../img/logo_wioslo.png'
+// import MailIcon from '@material-ui/icons/Mail';
+import LogoWioslo from '../img/logo_wioslo.png';
+import HomeIcon from '@material-ui/icons/Home';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import RowingIcon from '@material-ui/icons/Rowing';
+import MapIcon from '@material-ui/icons/Map';
 
 const drawerWidth = 240;
 
@@ -148,10 +152,32 @@ export default function MiniDrawer() {
         <List>
         <ListItem button >
               <ListItemIcon>
-                <InboxIcon/>
+                <HomeIcon/>
               </ListItemIcon>
               <ListItemText primary={'Home'} />
             </ListItem>
+            
+            <ListItem button >
+              <ListItemIcon>
+                <FavoriteIcon/>
+              </ListItemIcon>
+              <ListItemText primary={'Ulubione'} />
+            </ListItem>
+
+            <ListItem button >
+              <ListItemIcon>
+                <RowingIcon/>
+              </ListItemIcon>
+              <ListItemText primary={'Kayak'} />
+            </ListItem>
+
+            <ListItem button >
+              <ListItemIcon>
+                <MapIcon/>
+              </ListItemIcon>
+              <ListItemText primary={'Mapa'} />
+            </ListItem>
+            
         </List>
         <Divider />
         {/* <List>
