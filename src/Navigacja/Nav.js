@@ -23,6 +23,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import RowingIcon from '@material-ui/icons/Rowing';
 import MapIcon from '@material-ui/icons/Map';
 import { useStyles } from './nav-styles';
+import { Switch, Route, Link } from 'react-router-dom';
 
 export default function MiniDrawer() {
   const classes = useStyles();
@@ -47,7 +48,7 @@ export default function MiniDrawer() {
         })}
       >
         <Toolbar >
-          <IconButton
+        <IconButton
             color="inherit"
             aria-label="open drawer"
             onClick={handleDrawerOpen}
@@ -58,6 +59,7 @@ export default function MiniDrawer() {
           >
             <MenuIcon />
           </IconButton>
+          
             {/* <Typography  className={classes.toolbar}>
               Wiosło 
             </Typography>
@@ -86,38 +88,38 @@ export default function MiniDrawer() {
             {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
           </IconButton>
         </div>
-        <Divider />
+        {/* <Divider /> */}
         <List>
-        <ListItem button >
+            <ListItem button component = {Link} to = '/home'>
               <ListItemIcon>
                 <HomeIcon/>
               </ListItemIcon>
               <ListItemText primary={'Home'} />
             </ListItem>
             
-            <ListItem button >
+            <ListItem button component = {Link} to = '/ulubione'>
               <ListItemIcon>
                 <FavoriteIcon/>
               </ListItemIcon>
               <ListItemText primary={'Ulubione'} />
-            </ListItem>
+              </ListItem>
 
-            <ListItem button >
+            <ListItem button component = {Link} to = '/kayak'>
               <ListItemIcon>
                 <RowingIcon/>
               </ListItemIcon>
               <ListItemText primary={'Kayak'} />
             </ListItem>
-
-            <ListItem button >
+        
+            <ListItem button component = {Link} to = '/mapa'>
               <ListItemIcon>
                 <MapIcon/>
               </ListItemIcon>
               <ListItemText primary={'Mapa'} />
             </ListItem>
-            
+             
         </List>
-        <Divider />
+        {/* <Divider /> */}
         {/* <List>
           {['All mail', 'Trash', 'Spam'].map((text, index) => (
             <ListItem button key={text}>
@@ -127,32 +129,27 @@ export default function MiniDrawer() {
           ))}
         </List> */}
       </Drawer>
-      {/* <main className={classes.content}>
+      <main className={classes.content}>
         <div className={classes.toolbar} />
-        <Typography paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-          ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum
-          facilisis leo vel. Risus at ultrices mi tempus imperdiet. Semper risus in hendrerit
-          gravida rutrum quisque non tellus. Convallis convallis tellus id interdum velit laoreet id
-          donec ultrices. Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-          adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra nibh cras.
-          Metus vulputate eu scelerisque felis imperdiet proin fermentum leo. Mauris commodo quis
-          imperdiet massa tincidunt. Cras tincidunt lobortis feugiat vivamus at augue. At augue eget
-          arcu dictum varius duis at consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem
-          donec massa sapien faucibus et molestie ac.
-        </Typography>
-        <Typography paragraph>
-          Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper eget nulla
-          facilisi etiam dignissim diam. Pulvinar elementum integer enim neque volutpat ac
-          tincidunt. Ornare suspendisse sed nisi lacus sed viverra tellus. Purus sit amet volutpat
-          consequat mauris. Elementum eu facilisis sed odio morbi. Euismod lacinia at quis risus sed
-          vulputate odio. Morbi tincidunt ornare massa eget egestas purus viverra accumsan in. In
-          hendrerit gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem et
-          tortor. Habitant morbi tristique senectus et. Adipiscing elit duis tristique sollicitudin
-          nibh sit. Ornare aenean euismod elementum nisi quis eleifend. Commodo viverra maecenas
-          accumsan lacus vel facilisis. Nulla posuere sollicitudin aliquam ultrices sagittis orci a.
-        </Typography>
-      </main> */}
+        <Switch>
+          <Route path = '/home'>
+            <Typography paragraph> Home </Typography>
+          </Route>
+
+          <Route path = '/ulubione'>
+            <Typography paragraph> Ulubione </Typography>
+          </Route>
+
+          <Route path = '/kayak'>
+            <Typography paragraph> Kayak </Typography>
+          </Route>
+
+          <Route path = '/mapa'>
+            <Typography paragraph> Mapa </Typography>
+          </Route>
+          
+        </Switch>
+      </main>
     </div>
   );
 }

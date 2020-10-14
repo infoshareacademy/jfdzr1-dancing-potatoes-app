@@ -65,7 +65,9 @@ export const useStyles = makeStyles((theme) => ({
       padding: theme.spacing(3),
     },
     logo: {
-    width: '75%',
+    margin: 'auto',
+    width: '100px',
+    height: 'auto',
     },
 
 }));
