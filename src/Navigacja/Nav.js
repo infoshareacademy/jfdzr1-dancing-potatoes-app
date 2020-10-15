@@ -82,15 +82,15 @@ export default function MiniDrawer() {
           }),
         }}
       >
-        <div className={classes.toolbar}>
-        <img className={classes.logo} src={LogoWioslo} />
-          <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
-          </IconButton>
+        <div className={classes.toolbar} >
+          <img className={classes.logo} src={LogoWioslo} />
+            <IconButton onClick={handleDrawerClose} >
+              {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+            </IconButton>
         </div>
         {/* <Divider /> */}
-        <List>
-            <ListItem button component = {Link} to = '/home'>
+        <List className={classes.backgraundMenu}>
+            <ListItem button component = {Link} to = '/home' >
               <ListItemIcon>
                 <HomeIcon/>
               </ListItemIcon>
@@ -129,7 +129,7 @@ export default function MiniDrawer() {
           ))}
         </List> */}
       </Drawer>
-      <main className={classes.content}>
+      <main className={classes.content} >
         <div className={classes.toolbar} />
         <Switch>
           <Route path = '/home'>

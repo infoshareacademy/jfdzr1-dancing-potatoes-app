@@ -1,7 +1,8 @@
 import React from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
+import HomeImageBackgraund from '../img/app_5.jpg';
 
-const drawerWidth = 240;
+const drawerWidth = 198;
 
 export const useStyles = makeStyles((theme) => ({
     root: {
@@ -63,11 +64,15 @@ export const useStyles = makeStyles((theme) => ({
     content: {
       flexGrow: 1,
       padding: theme.spacing(3),
+      
     },
     logo: {
     margin: 'auto',
     width: '100px',
     height: 'auto',
     },
+    backgraundMenu: {
+    backgroundImage: `url(${HomeImageBackgraund})`,
+    }
 
 }));
