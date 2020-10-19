@@ -25,11 +25,15 @@ import MapIcon from '@material-ui/icons/Map';
 import { useStyles } from './nav-styles';
 import { Switch, Route, Link } from 'react-router-dom';
 import AddNewOfferForm from '../AddNewOfferForm/AddNewOfferForm';
+import Button from "../AddNewOfferForm/Button";
+import AddIcon from '@material-ui/icons/Add';
+import Popup from "../AddNewOfferForm/Popup"
 
 export default function MiniDrawer() {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
+  const [openPopup, setOpenPopup] = React.useState(false);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -68,6 +72,13 @@ export default function MiniDrawer() {
             <Typography  className={classes.toolbar}>
               Oferta
             </Typography> */}
+            <Button 
+            text = "Dodaj ofertę"
+            variant = "outlined"
+            startIcon = {<AddIcon />}
+            className = {classes.newButton}
+            onClick = {() => setOpenPopup(true)}
+            />
         </Toolbar>
       </AppBar>
       <Drawer
@@ -135,7 +146,7 @@ export default function MiniDrawer() {
         <Switch>
           <Route path = '/home'>
             <Typography paragraph> Home </Typography>
-            <AddNewOfferForm />
+           
           </Route>
 
           <Route path = '/ulubione'>
@@ -152,6 +163,12 @@ export default function MiniDrawer() {
           
         </Switch>
       </main>
+      <Popup
+      openPopup = {openPopup}
+      setOpenPopup={setOpenPopup}>
+      <AddNewOfferForm />
+     </Popup>
     </div>
+ 
   );
 }

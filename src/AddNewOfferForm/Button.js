@@ -6,12 +6,13 @@ export default function Button(props) {
     const {text, size, color, variant, onClick, ...other} = props
 
     return (
-        <MuiButton
+        <MuiButton 
         variant={variant || "contained"}
         size={size || "large"}
         colot={color || "primary"}
         onClick={onClick}
-        {...other}>
+        {...other}
+        dividers>
             {text}
         </MuiButton>
     )
