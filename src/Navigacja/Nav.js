@@ -90,30 +90,30 @@ export default function MiniDrawer() {
         </div>
         {/* <Divider /> */}
         <List className={classes.backgraundMenu}>
-            <ListItem button component = {Link} to = '/home' >
-              <ListItemIcon>
-                <HomeIcon/>
+            <ListItem button component = {Link} to = '/home' className={classes.menuTextStyle}>
+              <ListItemIcon className={classes.menuTextStyle}>
+                <HomeIcon className={classes.menuTextStyle}/>
               </ListItemIcon>
               <ListItemText primary={'Home'} />
             </ListItem>
             
-            <ListItem button component = {Link} to = '/ulubione'>
-              <ListItemIcon>
-                <FavoriteIcon/>
+            <ListItem button component = {Link} to = '/ulubione' className={classes.menuTextStyle}>
+              <ListItemIcon className={classes.menuTextStyle}>
+                <FavoriteIcon className={classes.menuTextStyle}/>
               </ListItemIcon>
               <ListItemText primary={'Ulubione'} />
               </ListItem>
 
-            <ListItem button component = {Link} to = '/kayak'>
-              <ListItemIcon>
-                <RowingIcon/>
+            <ListItem button component = {Link} to = '/kayak' className={classes.menuTextStyle}>
+              <ListItemIcon className={classes.menuTextStyle}>
+                <RowingIcon className={classes.menuTextStyle}/>
               </ListItemIcon>
               <ListItemText primary={'Kayak'} />
             </ListItem>
         
-            <ListItem button component = {Link} to = '/mapa'>
-              <ListItemIcon>
-                <MapIcon/>
+            <ListItem button component = {Link} to = '/mapa' className={classes.menuTextStyle}>
+              <ListItemIcon className={classes.menuTextStyle}>
+                <MapIcon className={classes.menuTextStyle}/>
               </ListItemIcon>
               <ListItemText primary={'Mapa'} />
             </ListItem>

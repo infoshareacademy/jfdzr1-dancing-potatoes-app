@@ -67,12 +67,15 @@ export const useStyles = makeStyles((theme) => ({
       
     },
     logo: {
-    margin: 'auto',
-    width: '100px',
-    height: 'auto',
+      margin: 'auto',
+      width: '85px',
     },
     backgraundMenu: {
-    backgroundImage: `url(${HomeImageBackgraund})`,
-    }
+      backgroundImage: `url(${HomeImageBackgraund})`,
+    },
+    menuTextStyle: {
+      color: 'white',
+      margin: '29px 0',
+    },
 
 }));
