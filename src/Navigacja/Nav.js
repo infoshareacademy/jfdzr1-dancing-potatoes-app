@@ -94,7 +94,7 @@ export default function MiniDrawer() {
               <ListItemIcon className={classes.menuTextStyle}>
                 <HomeIcon className={classes.menuTextStyle}/>
               </ListItemIcon>
-              <ListItemText primary={'Home'} />
+              <ListItemText primary={'Home'}/>
             </ListItem>
             
             <ListItem button component = {Link} to = '/ulubione' className={classes.menuTextStyle}>
