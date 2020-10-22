@@ -1,5 +1,4 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import React, {useState} from 'react';
 import FormLabel from '@material-ui/core/FormLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormGroup from '@material-ui/core/FormGroup';
@@ -7,17 +6,23 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Button from './Button';
 import AddIcon from '@material-ui/icons/Add';
+import { makeStyles, useTheme } from "@material-ui/core/styles";
+import CloseIcon from "@material-ui/icons/Close";
+import ActionButton from "./ActionButton";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
+    backgroundColor: 'white'
   },
   formControl: {
     margin: theme.spacing(3),
+    display: 'flex'
   },
 }));
 
-export default function LevelsCheckbox() {
+
+export default function LevelCheckbox(props) {
   const classes = useStyles();
   const [state, setState] = React.useState({
     easy: true,
@@ -25,6 +30,7 @@ export default function LevelsCheckbox() {
     hard: false,
   });
 
+  const { openModal, setOpenModal } = props;
   const handleChange = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
   };
@@ -33,9 +39,14 @@ export default function LevelsCheckbox() {
   const error = [easy, medium, hard].filter((v) => v).length !== 2;
 
   return (
-    <div className={classes.root}>
-      <FormControl component="fieldset" className={classes.formControl}>
+
+    <div className={classes.root}       >
+      <FormControl  component="fieldset" className={classes.formControl}>
         <FormLabel component="legend">Wybierz poziom trudności</FormLabel>
+        <ActionButton 
+        onClick={() => {setOpenModal(false)}}>
+          <CloseIcon />
+          </ActionButton>
         <FormGroup>
           <FormControlLabel
             control={<Checkbox checked={easy} onChange={handleChange} name="easy" />}
@@ -54,6 +65,7 @@ export default function LevelsCheckbox() {
            text = "Zapisz"
            variant = "contained"
            startIcon = {<AddIcon />}
+           type = 'submit'
            className = {classes.newButton}/>
       </FormControl>
     </div>
