@@ -18,11 +18,11 @@ import HomeIcon from '@material-ui/icons/Home';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import RowingIcon from '@material-ui/icons/Rowing';
 import MapIcon from '@material-ui/icons/Map';
-import { useStyles } from './nav-styles';
-import { Switch, Route, Link } from 'react-router-dom';
+import { navStyles } from './nav-styles';
+import { Link } from 'react-router-dom';
 
 export default function MiniDrawer() {
-  const classes = useStyles();
+  const classes = navStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
@@ -72,12 +72,11 @@ export default function MiniDrawer() {
         }}
       >
         <div className={classes.toolbar} >
-          <img className={classes.logo} src={LogoWioslo} />
+          <img className={classes.logo} src={LogoWioslo} alt={'Wioło'}/>
             <IconButton onClick={handleDrawerClose} >
               {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
             </IconButton>
         </div>
-        {/* <Divider /> */}
         <List className={classes.backgraundMenu}>
             <ListItem button component = {Link} to = '/home' className={classes.menuTextStyle}>
               <ListItemIcon className={classes.menuTextStyle}>
@@ -123,11 +122,6 @@ export default function MiniDrawer() {
           <Route path = '/kayak'>
             <Typography paragraph> Kayak </Typography>
           </Route>
-
-          <Route path = '/mapa'>
-            <Typography paragraph> Mapa </Typography>
-          </Route>
-          
         </Switch>
       </main> */}
     </div>

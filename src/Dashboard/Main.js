@@ -1,13 +1,10 @@
 import React from 'react';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
+import { mainStyles } from './MainStyles'
 
-class Main extends React.Component {
-
-
-    render() {
-        const classes = makeStyles();
+function Main() {
+        const classes = mainStyles();
         return (
             <>
                 <main className={classes.content} >
@@ -30,10 +27,9 @@ class Main extends React.Component {
                     </Route>
                 
                 </Switch>
-            </main>
+                </main>
             </>
         )
-    }
 }
 
 export default Main;
