@@ -6,7 +6,6 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import List from '@material-ui/core/List';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
@@ -57,13 +56,6 @@ export default function MiniDrawer() {
             <MenuIcon />
           </IconButton>
           
-            {/* <Typography  className={classes.toolbar}>
-              Wiosło 
-            </Typography>
-
-            <Typography  className={classes.toolbar}>
-              Oferta
-            </Typography> */}
         </Toolbar>
       </AppBar>
       <Drawer
@@ -116,17 +108,8 @@ export default function MiniDrawer() {
             </ListItem>
              
         </List>
-        {/* <Divider /> */}
-        {/* <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List> */}
       </Drawer>
-      <main className={classes.content} >
+      {/* <main className={classes.content} >
         <div className={classes.toolbar} />
         <Switch>
           <Route path = '/home'>
@@ -146,7 +129,7 @@ export default function MiniDrawer() {
           </Route>
           
         </Switch>
-      </main>
+      </main> */}
     </div>
   );
 }

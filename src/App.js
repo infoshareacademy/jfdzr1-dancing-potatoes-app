@@ -1,5 +1,7 @@
 import React from 'react';
-import Nav from './Navigacja/Nav'
+import Nav from './Navigacja/Nav';
+import Main from './Main';
+import { useStyles } from './Navigacja/nav-styles';
 
 
 function App() {
@@ -7,10 +9,10 @@ function App() {
   .then((r) => {return r.json() })
   .then (x => console.log(x))
   return (
-    <>
-    <Nav/>
-
-    </>
+    <div className={useStyles}>
+      <Nav/>
+      <Main/>
+    </div>
     
   );
 }

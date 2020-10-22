@@ -1,4 +1,4 @@
-import { makeStyles,} from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import HomeImageBackgraund from '../img/app_5.jpg';
 
 const drawerWidth = 198;
