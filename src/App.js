@@ -3,6 +3,7 @@ import Nav from './Navigacja/Nav';
 import Main from './Dashboard/Main';
 
 
+
 function App() {
   fetch('/offers.json')
   .then((r) => {return r.json() })
