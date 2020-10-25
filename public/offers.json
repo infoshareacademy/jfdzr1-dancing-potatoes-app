@@ -24,7 +24,7 @@
                 "price": 75
             }
         ],
-
+      
         "level": "easy",
         "location": {
             "city": "gdansk",
@@ -32,6 +32,7 @@
             "postalCode": "80-001",
             "street": "grobla",
             "streetNumber": "5"
+
         },
         "imageUrl": "foto.jpg",
         "description": "blebelebelblelbe"
