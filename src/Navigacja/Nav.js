@@ -21,7 +21,8 @@ import MapIcon from '@material-ui/icons/Map';
 import { navStyles } from './nav-styles';
 import { Link } from 'react-router-dom';
 
-export default function MiniDrawer() {
+
+function Nav({ children }) {
   const classes = navStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -108,22 +109,10 @@ export default function MiniDrawer() {
              
         </List>
       </Drawer>
-      {/* <main className={classes.content} >
-        <div className={classes.toolbar} />
-        <Switch>
-          <Route path = '/home'>
-            <Typography paragraph> Home </Typography>
-          </Route>
-
-          <Route path = '/ulubione'>
-            <Typography paragraph> Ulubione </Typography>
-          </Route>
-
-          <Route path = '/kayak'>
-            <Typography paragraph> Kayak </Typography>
-          </Route>
-        </Switch>
-      </main> */}
+      {children}
     </div>
+    
   );
 }
+
+export default Nav;
