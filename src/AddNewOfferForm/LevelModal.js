@@ -33,21 +33,20 @@ export default function LevelModal() {
     setOpen(false);
   };
 
-  const [ openModal, setOpenModal ] = useState(false);
   return (
     <div>
       <button type="button" 
       className="LevelButton" 
-      onClick={() => setOpenModal(true)}>
+      onClick={handleOpen}>
         Wybierz poziom trudności
       </button>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
         className={classes.modal}
-        open = {openModal}
+        open = {open}
         onClose={handleClose}
-        onRequestClose={()=> setOpenModal}
+        onRequestClose={handleClose}
         closeAfterTransition
         BackdropComponent={Backdrop}
         BackdropProps={{
@@ -55,10 +54,9 @@ export default function LevelModal() {
         }}
       >
        
-          <LevelCheckbox>
-          
-
-          </LevelCheckbox>
+          <LevelCheckbox 
+            handleClose={handleClose}
+          />
       
       </Modal>
     </div>

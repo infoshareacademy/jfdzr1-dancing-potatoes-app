@@ -20,8 +20,8 @@ const theme = createMuiTheme({
 export default function Popup(props) {
   const { children, openPopup, setOpenPopup } = props;
   return (
-    <ThemeProvider theme={theme} style={{lineHeight: "0px"}}>
-      <Dialog open={openPopup}>
+    <ThemeProvider theme={theme}>
+      <Dialog open={openPopup} maxWidth="xl">
         <DialogTitle>
           <div style={{ display: "flex" }}>
             <Typography variant="h5" component="div" style={{ flexGrow: 1 }}>

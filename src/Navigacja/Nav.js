@@ -27,7 +27,8 @@ import { Switch, Route, Link } from 'react-router-dom';
 import AddNewOfferForm from '../AddNewOfferForm/AddNewOfferForm';
 import Button from "../AddNewOfferForm/Button";
 import AddIcon from '@material-ui/icons/Add';
-import Popup from "../AddNewOfferForm/Popup"
+import Popup from "../AddNewOfferForm/Popup";
+import Home from "../Home/Home"
 
 export default function MiniDrawer() {
   const classes = useStyles();
@@ -102,7 +103,7 @@ export default function MiniDrawer() {
         </div>
         {/* <Divider /> */}
         <List>
-            <ListItem button component = {Link} to = '/home'>
+            <ListItem button component = {Link} to = 'Home'>
               <ListItemIcon>
                 <HomeIcon/>
               </ListItemIcon>
@@ -145,7 +146,7 @@ export default function MiniDrawer() {
         <div className={classes.toolbar} />
         <Switch>
           <Route path = '/home'>
-            <Typography paragraph> Home </Typography>
+            <Home/>
            
           </Route>
 

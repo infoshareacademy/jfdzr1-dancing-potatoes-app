@@ -30,7 +30,7 @@ export default function LevelCheckbox(props) {
     hard: false,
   });
 
-  const { openModal, setOpenModal } = props;
+  const { handleClose } = props;
   const handleChange = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
   };
@@ -44,7 +44,7 @@ export default function LevelCheckbox(props) {
       <FormControl  component="fieldset" className={classes.formControl}>
         <FormLabel component="legend">Wybierz poziom trudności</FormLabel>
         <ActionButton 
-        onClick={() => {setOpenModal(false)}}>
+        onClick={handleClose}>
           <CloseIcon />
           </ActionButton>
         <FormGroup>

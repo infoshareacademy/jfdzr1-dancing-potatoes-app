@@ -28,8 +28,6 @@ export default function AddNewOfferForm() {
 
   return (
     <form className={classes.root}>
-      <Grid container>
-        <Grid item xs={6}>
           <div class="diwek">
             <TextField
               variant="outlined"
@@ -37,13 +35,14 @@ export default function AddNewOfferForm() {
               value={values.title}
             />
           </div>
-          <div style={{display: "flex", alignSelf:"center", lineHeight:1.10, width: "100%"}}>
+          <div style={{display: "flex", alignSelf:"center", lineHeight:1.10, width: "100%", marginTop: '20px'}}>
             <LevelModal />
             <div style={{display: "flex", width: "61%"}}>
             <TextField
               variant="outlined"
               label="Cena za osobę"
               value={values.onePerson}
+              style={{marginLeft : "10px"}}
             />
             <TextField
               variant="outlined"
@@ -103,8 +102,6 @@ export default function AddNewOfferForm() {
           />
           </div>
           </div>
-        </Grid>
-        <Grid item xs={6}></Grid>
         <div
           style={{ display: "flex", justifyContent: "center", width: "100%" }}
         >
@@ -124,7 +121,6 @@ export default function AddNewOfferForm() {
             style={{ display: "flex", margin: "3px" }}
           />
         </div>
-      </Grid>
     </form>
   );
 }
