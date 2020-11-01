@@ -33,7 +33,15 @@ export default function VehiclesModal() {
 
   return (
     <div>
-      <button type="button" className="LevelButton" onClick={handleOpen} >
+      <button 
+      type="button" 
+      className="LevelButton" 
+      onClick={handleOpen} 
+      style={{ 
+        display: "flex", 
+        marginLeft: "10px", 
+        backgroundColor: "white",
+        width: "168%"}}>
         Dostępne łódki
       </button>
       <Modal
@@ -43,13 +51,15 @@ export default function VehiclesModal() {
         open={open}
         onClose={handleClose}
         closeAfterTransition
+        onRequestClose={handleClose}
         BackdropComponent={Backdrop}
         BackdropProps={{
           timeout: 500,
         }}
       >
         <Fade in={open}>
-            <VehiclesCheckbox />
+            <VehiclesCheckbox 
+                        handleClose={handleClose}/>
         </Fade>
       </Modal>
     </div>

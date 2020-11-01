@@ -37,7 +37,8 @@ export default function LevelModal() {
     <div>
       <button type="button" 
       className="LevelButton" 
-      onClick={handleOpen}>
+      onClick={handleOpen}
+      style={{backgroundColor: "white"}}>
         Wybierz poziom trudności
       </button>
       <Modal

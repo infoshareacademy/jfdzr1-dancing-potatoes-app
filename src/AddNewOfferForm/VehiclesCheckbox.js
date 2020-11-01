@@ -7,6 +7,8 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Button from './Button';
 import AddIcon from '@material-ui/icons/Add';
+import ActionButton from "./ActionButton";
+import CloseIcon from "@material-ui/icons/Close";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -35,17 +37,26 @@ export default function VehiclesCheckbox(props) {
   });
 
   const handleChange = (event) => {
-    setState({ ...state, openPopup, [event.target.name]: event.target.checked });
+    setState({ ...state, [event.target.name]: event.target.checked });
   };
-  const {openPopup, setOpenPopup} = props;
+  const {handleClose} = props;
   const { classic, sports, pedalo, boat, rowing } = state;
   const error = [classic, sports, pedalo, boat, rowing].filter((v) => v).length !== 2;
 
   return (
     <div className={classes.root}>
-      <FormControl component="fieldset" className={classes.formControl} >
-        <FormLabel component="legend">Dostępne łódki</FormLabel>
-        <FormGroup>
+      <FormControl component="fieldset" className={classes.formControl} style={{width:"100%"}}>
+        <div style={{display: "flex", width:"100%"}}>
+        <FormLabel component="div" style={{flexGrow:1}}>Dostępne łódki</FormLabel>
+        <div
+        style={{marginTop: "-10px", marginRight:"-4%"}}>
+        <ActionButton 
+        onClick={handleClose}>
+          <CloseIcon/>
+          </ActionButton>
+          </div>
+          </div>
+        <FormGroup >  
           <FormControlLabel
             control={<Checkbox checked={classic} onChange={handleChange} name="classic" />}
             label="Kajaki rekreacyjne"

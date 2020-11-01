@@ -42,11 +42,19 @@ export default function LevelCheckbox(props) {
 
     <div className={classes.root}       >
       <FormControl  component="fieldset" className={classes.formControl}>
-        <FormLabel component="legend">Wybierz poziom trudności</FormLabel>
+      <div style={{ display: "flex" }}>
+        <FormLabel  component="div" style={{ flexGrow: 1 }}>Wybierz poziom trudności</FormLabel>
+        <div style={{marginTop: "-10px", marginRight: "-8%"}}>
         <ActionButton 
-        onClick={handleClose}>
-          <CloseIcon />
+        onClick={handleClose}
+        >
+          <CloseIcon
+          >
+
+          </CloseIcon>
           </ActionButton>
+          </div>
+          </div>
         <FormGroup>
           <FormControlLabel
             control={<Checkbox checked={easy} onChange={handleChange} name="easy" />}
