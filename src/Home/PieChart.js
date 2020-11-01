@@ -36,7 +36,7 @@ import { PieChart, Pie, Sector, Cell } from 'recharts';
               data={data}
               cx={200}
               cy={200}
-              labelLine={false}
+              labelLine={true}
               label={renderCustomizedLabel}
               outerRadius={80}
               fill="#8884d8"
