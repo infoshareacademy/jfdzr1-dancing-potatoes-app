@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Bar, Line, Pie} from 'react-chartjs-2';
 
-class PieChart extends Component {
+class BarChart extends Component {
 
   constructor(props) {
       super(props);
@@ -37,7 +37,7 @@ class PieChart extends Component {
       return (
         <div className="chart"
         style={{width: "400px", height: "300px"}}>
-            <Pie 
+            <Bar 
             data={this.state.chartData}
   
             options={{
@@ -59,4 +59,4 @@ class PieChart extends Component {
 
 }
 
-export default PieChart;
+export default BarChart;
