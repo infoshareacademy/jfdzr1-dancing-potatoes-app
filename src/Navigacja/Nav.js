@@ -1,13 +1,11 @@
 import React from 'react';
 import clsx from 'clsx';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { useTheme } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import List from '@material-ui/core/List';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
@@ -15,27 +13,23 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-// import InboxIcon from '@material-ui/icons/MoveToInbox';
-// import MailIcon from '@material-ui/icons/Mail';
 import LogoWioslo from '../img/logo_wioslo.png';
 import HomeIcon from '@material-ui/icons/Home';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import RowingIcon from '@material-ui/icons/Rowing';
 import MapIcon from '@material-ui/icons/Map';
-import { useStyles } from './nav-styles';
-import { Switch, Route, Link } from 'react-router-dom';
+import { navStyles } from './nav-styles';
+import { Link } from 'react-router-dom';
+import AddIcon from "@material-ui/icons/Add";
+import Popup from "../AddNewOfferForm/Popup";
 import AddNewOfferForm from '../AddNewOfferForm/AddNewOfferForm';
 import Button from "../AddNewOfferForm/Button";
-import AddIcon from '@material-ui/icons/Add';
-import Popup from "../AddNewOfferForm/Popup";
-import Home from "../Home/Home"
 
-export default function MiniDrawer() {
-  const classes = useStyles();
+function Nav({ children }) {
+  const classes = navStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
   const [openPopup, setOpenPopup] = React.useState(false);
-
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -53,8 +47,7 @@ export default function MiniDrawer() {
           [classes.appBarShift]: open,
         })}
       >
-        <Toolbar>
-          
+        <Toolbar >
         <IconButton
             aria-label="open drawer"
             onClick={handleDrawerOpen}
@@ -65,14 +58,6 @@ export default function MiniDrawer() {
           >
             <MenuIcon />
           </IconButton>
-          
-            {/* <Typography  className={classes.toolbar}>
-              Wiosło 
-            </Typography>
-
-            <Typography  className={classes.toolbar}>
-              Oferta
-            </Typography> */}
             <Button 
             text = "Dodaj ofertę"
             variant = "outlined"
@@ -95,81 +80,52 @@ export default function MiniDrawer() {
           }),
         }}
       >
-        <div className={classes.toolbar}>
-        <img className={classes.logo} src={LogoWioslo} />
-          <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
-          </IconButton>
+        <div className={classes.toolbar} >
+          <img className={classes.logo} src={LogoWioslo} alt={'Wioło'}/>
+            <IconButton onClick={handleDrawerClose} >
+              {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+            </IconButton>
         </div>
-        {/* <Divider /> */}
-        <List>
-            <ListItem button component = {Link} to = 'Home'>
-              <ListItemIcon>
-                <HomeIcon/>
+        <List className={classes.backgraundMenu}>
+            <ListItem button component = {Link} to = '/home' className={classes.menuTextStyle}>
+              <ListItemIcon className={classes.menuTextStyle}>
+                <HomeIcon className={classes.menuTextStyle}/>
               </ListItemIcon>
-              <ListItemText primary={'Home'} />
+              <ListItemText primary={'Home'}/>
             </ListItem>
             
-            <ListItem button component = {Link} to = '/ulubione'>
-              <ListItemIcon>
-                <FavoriteIcon/>
+            <ListItem button component = {Link} to = '/ulubione' className={classes.menuTextStyle}>
+              <ListItemIcon className={classes.menuTextStyle}>
+                <FavoriteIcon className={classes.menuTextStyle}/>
               </ListItemIcon>
               <ListItemText primary={'Ulubione'} />
               </ListItem>
 
-            <ListItem button component = {Link} to = '/kayak'>
-              <ListItemIcon>
-                <RowingIcon/>
+            <ListItem button component = {Link} to = '/kayak' className={classes.menuTextStyle}>
+              <ListItemIcon className={classes.menuTextStyle}>
+                <RowingIcon className={classes.menuTextStyle}/>
               </ListItemIcon>
               <ListItemText primary={'Kayak'} />
             </ListItem>
         
-            <ListItem button component = {Link} to = '/mapa'>
-              <ListItemIcon>
-                <MapIcon/>
+            <ListItem button component = {Link} to = '/mapa' className={classes.menuTextStyle}>
+              <ListItemIcon className={classes.menuTextStyle}>
+                <MapIcon className={classes.menuTextStyle}/>
               </ListItemIcon>
               <ListItemText primary={'Mapa'} />
             </ListItem>
              
         </List>
-        {/* <Divider /> */}
-        {/* <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List> */}
       </Drawer>
-      <main className={classes.content}>
-        <div className={classes.toolbar} />
-        <Switch>
-          <Route path = '/home'>
-            <Home/>
-           
-          </Route>
-
-          <Route path = '/ulubione'>
-            <Typography paragraph> Ulubione </Typography>
-          </Route>
-
-          <Route path = '/kayak'>
-            <Typography paragraph> Kayak </Typography>
-          </Route>
-
-          <Route path = '/mapa'>
-            <Typography paragraph> Mapa </Typography>
-          </Route>
-          
-        </Switch>
-      </main>
+      {children}
       <Popup
       openPopup = {openPopup}
       setOpenPopup={setOpenPopup}>
       <AddNewOfferForm />
      </Popup>
     </div>
- 
+    
   );
 }
+
+export default Nav;
