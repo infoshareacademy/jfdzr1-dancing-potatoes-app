@@ -4,7 +4,7 @@ const drawerWidth = 198;
 
 export const mainStyles = makeStyles((theme) => ({
   root: {
-    display: 'flex',
+    display: 'flex'
   },
   toolbar: {
     display: 'flex',
@@ -18,6 +18,7 @@ export const mainStyles = makeStyles((theme) => ({
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),
+    background: 'linear-gradient(355deg, rgba(227,247,244,0.8575805322128851) 9%, rgba(129,164,195,1) 64%, rgba(166,226,198,1) 100%)'
     
   },
 

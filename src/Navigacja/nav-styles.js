@@ -79,5 +79,9 @@ export const navStyles = makeStyles((theme) => ({
     newButton : {
       position : "absolute",
       right : " 10px "
+    },
+    '& .makeStyles-content-78':{
+      background: 'black'
     }
+
 }));

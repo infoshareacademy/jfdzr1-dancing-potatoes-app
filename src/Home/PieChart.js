@@ -7,24 +7,23 @@ class PieChart extends Component {
       super(props);
       this.state = {
           chartData : {
-            labels: ['Gdańsk', 'Gdynia', 'Sopot', 'Szczecin', 'Mazury'],
+            labels: ['Kajaki jednoosobowe', 'Kajaki Wieloosobowe', 'Rowery wodne', 'Łodzie', 'Łodzie wioślarskie'],
             datasets: [
               {
                 label: "Population",
                 data: [
-                  1234123,
-                  434222,
-                  553344,
-                  545353,
-                  765344
+                  443,
+                  314,
+                  256,
+                  82,
+                  25
                 ],
                 backgroundColor: 
-                ['rgb(145, 143, 71)',
-                'rgb(180, 180, 180)',
-                'rgb(0, 0, 0)',
-                'rgba(255, 99, 71, 0.5)',
-                'rgb(106, 90, 205)'
-
+                ['#89C7CC',
+                '#04738D',
+                '#89C7CC',
+                '#04738D',
+                '#F1B71C',
                 ]
               }
             ]
@@ -36,14 +35,14 @@ class PieChart extends Component {
 
       return (
         <div className="chart"
-        style={{width: "400px", height: "300px"}}>
+        style={{width: "500px", height: "400px"}}>
             <Pie 
             data={this.state.chartData}
   
             options={{
               title: {
                 display: true,
-                text:'Largest Cities in the world',
+                text:'Nasze wypożyczalnie oferują',
                 fontSize: 25
               },
               legend: {

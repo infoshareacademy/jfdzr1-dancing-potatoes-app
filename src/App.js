@@ -46,7 +46,7 @@ function App() {
   return (
     <MuiThemeProvider theme={theme}>
       <Nav>
-      <Main/>
+      <Main />
       </Nav>
       </MuiThemeProvider>
   );
