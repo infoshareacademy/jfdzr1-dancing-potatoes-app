@@ -5,40 +5,38 @@ import { GoogleMap, Marker } from 'react-google-maps';
 class Map extends React.Component {
 
     state = {
-        localization: []
+        localization: [],
     }
+
 
     componentDidMount() {
         fetch('/offers.json')
         .then(r =>  r.json())
-        .then(data => {
-            data.map((localizationData) => {
-                this.setState({
-                    localization: localizationData.location.coordinates
-                })
-            })
-        });
+        .then(data => this.setState({localization: data}));       
     }
 
 
 
     render(){
-        // console.log(this.state.localization[0])
+
+        let markersLokalization = this.state.localization.map(e => {
+            return e.location.coordinates
+        })
+
         return( 
             <GoogleMap 
             defaultZoom={11} 
             defaultCenter={{ lat: 54.352024, lng: 18.646639 }}
             >
-                
-                {this.state.localization.map((baza) => {
-
+                {markersLokalization.map((location) => {
+                    return <Marker
+                        position = {{
+                            lat: parseFloat(location[0]),
+                            lng: parseFloat(location[1])
+                        }}
+                    />
                 })}
-                
-            
 
-                
-
-                
             </GoogleMap>    
         )
     }
