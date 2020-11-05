@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import Typography from '@material-ui/core/Typography';
 import { mainStyles } from './MainStyles';
 import Home from "../Home/Home";
+import OfferCards from '../Offerts/OfferCards';
 function Main() {
         const classes = mainStyles();
 
@@ -19,7 +20,7 @@ function Main() {
                     </Route>
 
                     <Route path = '/kayak'>
-                        <Typography paragraph> Kayak </Typography>
+                       <OfferCards />
                     </Route>
 
                     <Route path = '/mapa'>

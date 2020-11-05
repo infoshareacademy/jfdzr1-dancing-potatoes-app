@@ -32,6 +32,7 @@ export const navStyles = makeStyles((theme) => ({
       width: drawerWidth,
       flexShrink: 0,
       whiteSpace: 'nowrap',
+      height: "100%"
     },
     drawerOpen: {
       width: drawerWidth,
@@ -62,8 +63,7 @@ export const navStyles = makeStyles((theme) => ({
     },
     content: {
       flexGrow: 1,
-      padding: theme.spacing(3),
-      
+      padding: theme.spacing(3),      
     },
     logo: {
       margin: 'auto',
@@ -74,14 +74,11 @@ export const navStyles = makeStyles((theme) => ({
     },
     menuTextStyle: {
       color: 'white',
-      margin: '29px 0',
+      margin: '24px 0',
     },
     newButton : {
       position : "absolute",
       right : " 10px "
     },
-    '& .makeStyles-content-78':{
-      background: 'black'
-    }
 
 }));
