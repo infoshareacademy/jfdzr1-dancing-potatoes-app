@@ -27,7 +27,7 @@
       
         "level": "easy",
         "location": {
-            "city": "gdansk",
+            "city": "Gdansk",
             "river": "motlawa",
             "postalCode": "80-747",
             "street": "Kamienna Grobla",
@@ -67,7 +67,7 @@
       
         "level": "easy",
         "location": {
-            "city": "gdansk",
+            "city": "Gdansk",
             "river": "motlawa",
             "postalCode": "80-863",
             "street": "Dokowa",
@@ -147,7 +147,7 @@
       
         "level": "easy",
         "location": {
-            "city": "gdansk",
+            "city": "Gdansk",
             "river": "motlawa",
             "postalCode": "80-822",
             "street": "Żabi Kruk",
@@ -187,7 +187,7 @@
       
         "level": "easy",
         "location": {
-            "city": "gdansk",
+            "city": "Gdansk",
             "river": "motlawa",
             "postalCode": "80-246",
             "street": "Władysława Pniewskiego",
@@ -227,7 +227,7 @@
       
         "level": "easy",
         "location": {
-            "city": "gdansk",
+            "city": "Gdansk",
             "river": "motlawa",
             "postalCode": "80-561",
             "street": "Pokładowa ",

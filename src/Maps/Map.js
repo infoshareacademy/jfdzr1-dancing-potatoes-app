@@ -1,25 +1,26 @@
 import React from 'react';
-import { GoogleMap, Marker } from 'react-google-maps';
+import { GoogleMap, Marker, InfoWindow } from 'react-google-maps';
 
 
 class Map extends React.Component {
 
     state = {
-        localization: [],
+        offersInfo: [],
     }
 
 
     componentDidMount() {
         fetch('/offers.json')
         .then(r =>  r.json())
-        .then(data => this.setState({localization: data}));       
+        .then(data => this.setState({offersInfo: data}));       
     }
-
-
+    
 
     render(){
+        
+        
 
-        let markersLokalization = this.state.localization.map(e => {
+        let markersLokalization = this.state.offersInfo.map(e => {
             return e.location.coordinates
         })
 
@@ -29,12 +30,28 @@ class Map extends React.Component {
             defaultCenter={{ lat: 54.352024, lng: 18.646639 }}
             >
                 {markersLokalization.map((location) => {
-                    return <Marker
+                    return (
+                    <>
+                        <Marker
                         position = {{
                             lat: parseFloat(location[0]),
                             lng: parseFloat(location[1])
                         }}
-                    />
+                        onClick={() => {
+                            return <InfoWindow
+
+                            >
+                                <div>info</div>
+                            </InfoWindow>
+                                                        
+                        }}
+                        />
+
+                        
+
+                    </>
+                    )
+                    
                 })}
 
             </GoogleMap>    
