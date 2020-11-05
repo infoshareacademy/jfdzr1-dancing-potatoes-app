@@ -14,10 +14,10 @@ function Main() {
                     <Route path = '/home'>
                         <Home />
                     </Route>
-
+{/* 
                     <Route path = '/ulubione'>
                         <Typography paragraph> Ulubione </Typography>
-                    </Route>
+                    </Route> */}
 
                     <Route path = '/kayak'>
                        <OfferCards />
