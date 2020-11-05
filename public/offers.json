@@ -32,7 +32,8 @@
             "postalCode": "80-747",
             "street": "Kamienna Grobla",
             "streetNumber": "2",
-            "coordinates": [54.343922, 18.659500]
+            "lat": "54.343922", 
+            "lng": "18.659500"
 
         },
         "imageUrl": "foto.jpg",
@@ -72,7 +73,8 @@
             "postalCode": "80-863",
             "street": "Dokowa",
             "streetNumber": "1",
-            "coordinates": [54.362640, 18.651819]
+            "lat": "54.362640", 
+            "lng": "18.651819"
 
         },
         "imageUrl": "foto.jpg",
@@ -112,7 +114,8 @@
             "postalCode": "81-824",
             "street": "Parkowa",
             "streetNumber": "64",
-            "coordinates": [54.439350, 18.574190]
+            "lat": "54.439350", 
+            "lng": "18.574190"
 
         },
         "imageUrl": "foto.jpg",
@@ -152,7 +155,8 @@
             "postalCode": "80-822",
             "street": "Żabi Kruk",
             "streetNumber": "15",
-            "coordinates": [54.342449, 18.648230]
+            "lat": "54.342449", 
+            "lng": "18.648230"
 
         },
         "imageUrl": "foto.jpg",
@@ -192,7 +196,8 @@
             "postalCode": "80-246",
             "street": "Władysława Pniewskiego",
             "streetNumber": "7/1",
-            "coordinates": [54.376820, 18.605770]
+            "lat": "54.376820", 
+            "lng": "18.605770"
 
         },
         "imageUrl": "foto.jpg",
@@ -232,7 +237,8 @@
             "postalCode": "80-561",
             "street": "Pokładowa ",
             "streetNumber": "9",
-            "coordinates": [54.394680, 18.685320]
+            "lat": "54.394680", 
+            "lng": "18.685320"
 
         },
         "imageUrl": "foto.jpg",

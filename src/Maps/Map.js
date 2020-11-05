@@ -21,7 +21,7 @@ class Map extends React.Component {
         
 
         let markersLokalization = this.state.offersInfo.map(e => {
-            return e.location.coordinates
+            return e.location
         })
 
         return( 
@@ -34,16 +34,11 @@ class Map extends React.Component {
                     <>
                         <Marker
                         position = {{
-                            lat: parseFloat(location[0]),
-                            lng: parseFloat(location[1])
+                            lat: parseFloat(location.lat),
+                            lng: parseFloat(location.lng) 
                         }}
                         onClick={() => {
-                            return <InfoWindow
-
-                            >
-                                <div>info</div>
-                            </InfoWindow>
-                                                        
+                            
                         }}
                         />
 
