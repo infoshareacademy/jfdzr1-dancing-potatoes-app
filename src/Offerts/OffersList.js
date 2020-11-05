@@ -16,19 +16,19 @@ export const offers = [
             {
                 "type": "kajak group",
                 "numberOfPeople": 10,
-                "price": 150
+                "price": 66
             },
             {
                 "type": "rowerek 4 osobowy",
                 "numberOfPeople": 4,
-                "price": 75
+                "price": 12
             }
         ],
       
         "level": "medium",
         "location": {
-            "city": "gdansk",
-            "river": "motlawa",
+            "city": "Gdańsk",
+            "river": "Motława",
             "postalCode": "80-747",
             "street": "Kamienna Grobla",
             "streetNumber": "2",
@@ -36,7 +36,7 @@ export const offers = [
 
         },
         "imageUrl": "https://images.pexels.com/photos/241044/pexels-photo-241044.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
-        "description": "blebelebelblelbe"
+        "description": "Świetna zabawa dla całej rodziny!"
     },
 
     {
@@ -46,28 +46,28 @@ export const offers = [
             {
                 "type": "kajak jednoosoby",
                 "numberOfPeople": 1,
-                "price": 15
+                "price": 11
             },
             {
                 "type": "kajak dwusobowy",
                 "numberOfPeople": 2,
-                "price": 25
+                "price": 63
             },
             {
                 "type": "kajak group",
                 "numberOfPeople": 10,
-                "price": 150
+                "price": 245
             },
             {
                 "type": "rowerek 4 osobowy",
                 "numberOfPeople": 4,
-                "price": 75
+                "price": 21
             }
         ],
       
         "level": "hard",
         "location": {
-            "city": "gdansk",
+            "city": "Gdańsk",
             "river": "motlawa",
             "postalCode": "80-863",
             "street": "Dokowa",
@@ -76,7 +76,7 @@ export const offers = [
 
         },
         "imageUrl": "https://images.pexels.com/photos/1430672/pexels-photo-1430672.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
-        "description": "blebelebelblelbe"
+        "description": "Ostra jazda bez trzymanki"
     },
 
     {
@@ -86,22 +86,22 @@ export const offers = [
             {
                 "type": "kajak jednoosoby",
                 "numberOfPeople": 1,
-                "price": 15
+                "price": 11
             },
             {
                 "type": "kajak dwusobowy",
                 "numberOfPeople": 2,
-                "price": 25
+                "price": 77
             },
             {
                 "type": "kajak group",
                 "numberOfPeople": 10,
-                "price": 150
+                "price": 54
             },
             {
                 "type": "rowerek 4 osobowy",
                 "numberOfPeople": 4,
-                "price": 75
+                "price": 42
             }
         ],
       
@@ -116,7 +116,7 @@ export const offers = [
 
         },
         "imageUrl": "https://images.pexels.com/photos/1522344/pexels-photo-1522344.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
-        "description": "blebelebelblelbe"
+        "description": "W Sopocie nie tylko na imprezę !"
     },
 
     {
@@ -126,28 +126,28 @@ export const offers = [
             {
                 "type": "kajak jednoosoby",
                 "numberOfPeople": 1,
-                "price": 15
+                "price": 20
             },
             {
                 "type": "kajak dwusobowy",
                 "numberOfPeople": 2,
-                "price": 25
+                "price": 20
             },
             {
                 "type": "kajak group",
                 "numberOfPeople": 10,
-                "price": 150
+                "price": 30
             },
             {
                 "type": "rowerek 4 osobowy",
                 "numberOfPeople": 4,
-                "price": 75
+                "price": 30
             }
         ],
       
         "level": "medium",
         "location": {
-            "city": "gdansk",
+            "city": "Gdańsk",
             "river": "motlawa",
             "postalCode": "80-822",
             "street": "Żabi Kruk",
@@ -156,7 +156,7 @@ export const offers = [
 
         },
         "imageUrl": "https://images.pexels.com/photos/2847862/pexels-photo-2847862.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-        "description": "blebelebelblelbe"
+        "description": "Wszsytko co byś chciał"
     },
 
     {
@@ -166,28 +166,28 @@ export const offers = [
             {
                 "type": "kajak jednoosoby",
                 "numberOfPeople": 1,
-                "price": 15
+                "price": 10
             },
             {
                 "type": "kajak dwusobowy",
                 "numberOfPeople": 2,
-                "price": 25
+                "price": 20
             },
             {
                 "type": "kajak group",
                 "numberOfPeople": 10,
-                "price": 150
+                "price": 80
             },
             {
                 "type": "rowerek 4 osobowy",
                 "numberOfPeople": 4,
-                "price": 75
+                "price": 20
             }
         ],
       
         "level": "easy",
         "location": {
-            "city": "gdansk",
+            "city": "Gdańsk",
             "river": "motlawa",
             "postalCode": "80-246",
             "street": "Władysława Pniewskiego",
@@ -196,7 +196,7 @@ export const offers = [
 
         },
         "imageUrl": "https://images.pexels.com/photos/1497587/pexels-photo-1497587.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
-        "description": "blebelebelblelbe"
+        "description": "Można wnosić wódę na pokład ;)"
     },
 
     {
@@ -206,7 +206,7 @@ export const offers = [
             {
                 "type": "kajak jednoosoby",
                 "numberOfPeople": 1,
-                "price": 15
+                "price": 10
             },
             {
                 "type": "kajak dwusobowy",
@@ -216,18 +216,18 @@ export const offers = [
             {
                 "type": "kajak group",
                 "numberOfPeople": 10,
-                "price": 150
+                "price": 100
             },
             {
                 "type": "rowerek 4 osobowy",
                 "numberOfPeople": 4,
-                "price": 75
+                "price": 50
             }
         ],
       
         "level": "easy",
         "location": {
-            "city": "gdansk",
+            "city": "Gdynia",
             "river": "motlawa",
             "postalCode": "80-561",
             "street": "Pokładowa ",
@@ -236,7 +236,7 @@ export const offers = [
 
         },
         "imageUrl": "https://images.pexels.com/photos/40859/kayaking-kayaker-kayak-water-sports-40859.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
-        "description": "blebelebelblelbe"
+        "description": "Tu możesz wypożyczyć kajak"
     },
     {
         "title": "Kajaki",
@@ -266,7 +266,7 @@ export const offers = [
       
         "level": "hard",
         "location": {
-            "city": "gdansk",
+            "city": "Gdańsk",
             "river": "motlawa",
             "postalCode": "80-747",
             "street": "Kamienna Grobla",
@@ -275,7 +275,7 @@ export const offers = [
 
         },
         "imageUrl": "https://images.pexels.com/photos/3682409/pexels-photo-3682409.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-        "description": "blebelebelblelbe"
+        "description": "W Gdańsku się urodziłem mieście mym kochanym"
     },
     {
         "title": "Kajaki Szczecin",
@@ -305,7 +305,7 @@ export const offers = [
       
         "level": "easy",
         "location": {
-            "city": "gdansk",
+            "city": "Szczecin",
             "river": "motlawa",
             "postalCode": "80-747",
             "street": "Kamienna Grobla",
@@ -314,7 +314,7 @@ export const offers = [
 
         },
         "imageUrl": "https://images.pexels.com/photos/2851068/pexels-photo-2851068.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-        "description": "blebelebelblelbe"
+        "description": "Trochę daleko ale też fajnie"
     },
     {
         "title": "Po Motławie",
@@ -344,16 +344,16 @@ export const offers = [
       
         "level": "easy",
         "location": {
-            "city": "gdansk",
+            "city": "Gdańsk",
             "river": "motlawa",
             "postalCode": "80-747",
-            "street": "Kamienna Grobla",
+            "street": "Łąkowa",
             "streetNumber": "2",
             "coordinates": [54.343922, 18.659500]
 
         },
         "imageUrl": "https://images.pexels.com/photos/2930350/pexels-photo-2930350.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-        "description": "blebelebelblelbe"
+        "description": "tak na chillu"
     },
     {
         "title": "Rowery wodne tanio",
@@ -383,7 +383,7 @@ export const offers = [
       
         "level": "easy",
         "location": {
-            "city": "gdansk",
+            "city": "Gdańsk",
             "river": "motlawa",
             "postalCode": "80-747",
             "street": "Kamienna Grobla",
@@ -392,7 +392,7 @@ export const offers = [
 
         },
         "imageUrl": "https://images.pexels.com/photos/3554634/pexels-photo-3554634.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-        "description": "blebelebelblelbe"
+        "description": "Tu możesz wypożyczyć łabędzia"
     },
     {
         "title": "Kajaki",
@@ -422,7 +422,7 @@ export const offers = [
       
         "level": "hard",
         "location": {
-            "city": "gdansk",
+            "city": "Gdynia",
             "river": "motlawa",
             "postalCode": "80-747",
             "street": "Kamienna Grobla",
@@ -431,7 +431,7 @@ export const offers = [
 
         },
         "imageUrl": "https://images.pexels.com/photos/2239312/pexels-photo-2239312.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-        "description": "blebelebelblelbe"
+        "description": "Betonowy lasy mokną wiatr wieje w okno"
     },
     {
         "title": "Wypożyczalnia Łodzi",
@@ -461,7 +461,7 @@ export const offers = [
       
         "level": "medium",
         "location": {
-            "city": "gdansk",
+            "city": "Gdańsk",
             "river": "motlawa",
             "postalCode": "80-747",
             "street": "Kamienna Grobla",
@@ -470,7 +470,7 @@ export const offers = [
 
         },
         "imageUrl": "https://images.pexels.com/photos/3230588/pexels-photo-3230588.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-        "description": "blebelebelblelbe"
+        "description": "Tanio jak u mamy"
     },
     {
         "title": "Wypożyczalnia Makarski",
@@ -500,7 +500,7 @@ export const offers = [
       
         "level": "medium",
         "location": {
-            "city": "gdansk",
+            "city": "Gdańsk",
             "river": "motlawa",
             "postalCode": "80-747",
             "street": "Kamienna Grobla",
@@ -509,7 +509,7 @@ export const offers = [
 
         },
         "imageUrl": "https://images.pexels.com/photos/163504/canoeist-lake-yellowstone-water-163504.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-        "description": "blebelebelblelbe"
+        "description": "Wpadajcie tu"
     },
     {
         "title": "Kajakowo",
@@ -539,16 +539,16 @@ export const offers = [
       
         "level": "easy",
         "location": {
-            "city": "gdansk",
+            "city": "Gdańsk",
             "river": "motlawa",
             "postalCode": "80-747",
-            "street": "Kamienna Grobla",
+            "street": "Portowa",
             "streetNumber": "2",
             "coordinates": [54.343922, 18.659500]
 
         },
         "imageUrl": "https://images.pexels.com/photos/786134/pexels-photo-786134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-        "description": "blebelebelblelbe"
+        "description": "Łódki, kajaki i nie tylko "
     },
     {
         "title": "Kajaki tutaj",
@@ -578,7 +578,7 @@ export const offers = [
       
         "level": "easy",
         "location": {
-            "city": "gdansk",
+            "city": "Gdańsk",
             "river": "motlawa",
             "postalCode": "80-747",
             "street": "Kamienna Grobla",
@@ -587,7 +587,7 @@ export const offers = [
 
         },
         "imageUrl": "https://images.pexels.com/photos/163299/kayak-lake-outdoors-sport-163299.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-        "description": "blebelebelblelbe"
+        "description": "Jak w tytule. Kajaki tutaj"
     },
     {
         "title": "Poznań miasto doznań",
@@ -617,16 +617,16 @@ export const offers = [
       
         "level": "easy",
         "location": {
-            "city": "gdansk",
+            "city": "Poznań",
             "river": "motlawa",
             "postalCode": "80-747",
-            "street": "Kamienna Grobla",
+            "street": "Gdańska",
             "streetNumber": "2",
             "coordinates": [54.343922, 18.659500]
 
         },
         "imageUrl": "https://images.pexels.com/photos/871667/pexels-photo-871667.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-        "description": "blebelebelblelbe"
+        "description": "Tutaj też mamy kajaki"
     },
 
 ]

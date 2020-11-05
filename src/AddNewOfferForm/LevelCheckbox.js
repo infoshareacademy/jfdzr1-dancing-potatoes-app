@@ -47,6 +47,7 @@ export default function LevelCheckbox(props) {
         <div style={{marginTop: "-10px", marginRight: "-8%"}}>
         <ActionButton 
         onClick={handleClose}
+        color="primary"
         >
           <CloseIcon
           >
@@ -74,6 +75,8 @@ export default function LevelCheckbox(props) {
            variant = "contained"
            startIcon = {<AddIcon />}
            type = 'submit'
+            color="primary"
+           onClick={handleClose}
            className = {classes.newButton}/>
       </FormControl>
     </div>

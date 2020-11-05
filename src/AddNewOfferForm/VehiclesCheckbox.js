@@ -51,7 +51,8 @@ export default function VehiclesCheckbox(props) {
         <div
         style={{marginTop: "-10px", marginRight:"-4%"}}>
         <ActionButton 
-        onClick={handleClose}>
+        onClick={handleClose}
+        color="primary">
           <CloseIcon/>
           </ActionButton>
           </div>
@@ -84,6 +85,8 @@ export default function VehiclesCheckbox(props) {
            startIcon = {<AddIcon />}
            className = {classes.newButton}
            type = 'submit'
+           onClick={handleClose}
+           color="primary"
            />
         
       </FormControl>

@@ -71,10 +71,11 @@ export const navStyles = makeStyles((theme) => ({
     },
     backgraundMenu: {
       backgroundImage: `url(${HomeImageBackgraund})`,
+      height: "100%",
     },
     menuTextStyle: {
       color: 'white',
-      margin: '24px 0',
+      margin: '26px 0 ',
     },
     newButton : {
       position : "absolute",

@@ -6,19 +6,26 @@ import ActionButton from "./ActionButton";
 import Typography from "@material-ui/core/Typography";
 import CloseIcon from "@material-ui/icons/Close";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
-import { grey } from "@material-ui/core/colors/grey";
-import { brown } from "@material-ui/core/colors/brown";
+import { useStyles } from "./OfferStyles";
 const theme = createMuiTheme({
   palette: {
-    primary: grey,
-    secondary: brown,
-  },
+    primary: {
+        light: '#8d6e63',
+        main: '#795548',
+        dark: '#4e342e',
+    },
+    secondary: {
+        light: '#eeeeee',
+        main: '#9e9e9e',
+        dark: '#424242',
+    },
   contrastThreshold: 3,
   tonalOffset: 0.2,
-});
+  }});
 
 export default function Popup(props) {
   const { children, openPopup, setOpenPopup } = props;
+  const classes = useStyles();
   return (
     <ThemeProvider theme={theme}>
       <Dialog open={openPopup} maxWidth="xl">
@@ -38,7 +45,40 @@ export default function Popup(props) {
             </ActionButton>
           </div>
         </DialogTitle>
-        <DialogContent dividers>{children}</DialogContent>
+        <DialogContent>{children}</DialogContent>
+        <div style={{
+          display: "flex",
+          justifyContent: "center"
+        }}>
+        <Button
+            component="div"
+            color="primary"
+            type="submit"
+            text="Dodaj"
+            className={classes.ButtonAdd}
+            style={{ 
+              width: "100px", 
+              margin: "3px" }}
+            onClick={() => {
+              setOpenPopup(false);
+            }}
+ 
+          />
+          <Button
+            component="div"
+            type="reset"
+            color="primary"
+            text="Resetuj"
+            className={classes.ButtonReset}
+            style={{ 
+              width: "100px", 
+              margin: "3px" }}
+            onClick={() => {
+              setOpenPopup(false);
+            }}
+          
+          />
+          </div>
       </Dialog>
     </ThemeProvider>
   );

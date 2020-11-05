@@ -106,21 +106,7 @@ export default function AddNewOfferForm() {
         <div
           style={{ display: "flex", justifyContent: "center", width: "100%", marginTop:"10px" }}
         >
-          <Button
-            component="div"
-            type="submit"
-            text="Dodaj"
-            className={classes.ButtonAdd}
-            style={{ display: "flex", margin: "3px" }}
-          />
-          <Button
-            component="div"
-            type="reset"
-            color="secondary"
-            text="Resetuj"
-            className={classes.ButtonReset}
-            style={{ display: "flex", margin: "3px" }}
-          />
+         
         </div>
     </form>
   );

@@ -60,7 +60,8 @@ function Nav({ children }) {
           </IconButton>
             <Button 
             text = "Dodaj ofertę"
-            variant = "outlined"
+            color="secondary"
+            variant = "contained"
             startIcon = {<AddIcon />}
             className = {classes.newButton}
             onClick = {() => setOpenPopup(true)}
