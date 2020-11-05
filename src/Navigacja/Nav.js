@@ -20,13 +20,16 @@ import RowingIcon from '@material-ui/icons/Rowing';
 import MapIcon from '@material-ui/icons/Map';
 import { navStyles } from './nav-styles';
 import { Link } from 'react-router-dom';
-
+import AddIcon from "@material-ui/icons/Add";
+import Popup from "../AddNewOfferForm/Popup";
+import AddNewOfferForm from '../AddNewOfferForm/AddNewOfferForm';
+import Button from "../AddNewOfferForm/Button";
 
 function Nav({ children }) {
   const classes = navStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
-
+  const [openPopup, setOpenPopup] = React.useState(false);
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -46,7 +49,6 @@ function Nav({ children }) {
       >
         <Toolbar >
         <IconButton
-            color="inherit"
             aria-label="open drawer"
             onClick={handleDrawerOpen}
             edge="start"
@@ -56,7 +58,14 @@ function Nav({ children }) {
           >
             <MenuIcon />
           </IconButton>
-          
+            <Button 
+            text = "Dodaj ofertę"
+            color="secondary"
+            variant = "contained"
+            startIcon = {<AddIcon />}
+            className = {classes.newButton}
+            onClick = {() => setOpenPopup(true)}
+            />
         </Toolbar>
       </AppBar>
       <Drawer
@@ -110,6 +119,11 @@ function Nav({ children }) {
         </List>
       </Drawer>
       {children}
+      <Popup
+      openPopup = {openPopup}
+      setOpenPopup={setOpenPopup}>
+      <AddNewOfferForm />
+     </Popup>
     </div>
     
   );
