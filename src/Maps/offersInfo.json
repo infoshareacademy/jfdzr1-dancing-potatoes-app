@@ -10,7 +10,7 @@
         "properties": {
           "PARK_ID": 1,
           "FACILITYID": 28014,
-          "NAME": "Bearbrook Skateboard Park",
+          "NAME": "KAJAK 1",
           "NAME_FR": "Planchodrome Bearbrook",
           "ADDRESS": "8720 Russell Road",
           "ADDRESS_FR": "8720, chemin Russell",
@@ -28,7 +28,12 @@
           "DESCRIPT_1": "Surface d'asphalte plane, 5 modules",
           "PICTURE_LI": null,
           "PICTURE_DE": null,
-          "PICTURE__1": null
+          "PICTURE__1": null,
+          "city": "Gdansk",
+          "river": "motlawa",
+          "postalCode": "80-747",
+          "street": "Kamienna Grobla",
+          "streetNumber": "2"
         },
         "geometry": {
           "type": "Point",
@@ -40,7 +45,7 @@
         "properties": {
           "PARK_ID": 2,
           "FACILITYID": 28014,
-          "NAME": "Bearbrook Skateboard Park",
+          "NAME": "KAJAK 2",
           "NAME_FR": "Planchodrome Bearbrook",
           "ADDRESS": "8720 Russell Road",
           "ADDRESS_FR": "8720, chemin Russell",
@@ -58,7 +63,12 @@
           "DESCRIPT_1": "Surface d'asphalte plane, 5 modules",
           "PICTURE_LI": null,
           "PICTURE_DE": null,
-          "PICTURE__1": null
+          "PICTURE__1": null,
+          "city": "Gdansk",
+          "river": "motlawa",
+          "postalCode": "80-863",
+          "street": "Dokowa",
+          "streetNumber": "1"
         },
         "geometry": {
           "type": "Point",
@@ -70,7 +80,7 @@
         "properties": {
           "PARK_ID": 3,
           "FACILITYID": 28014,
-          "NAME": "Bearbrook Skateboard Park",
+          "NAME": "KAJAK 3",
           "NAME_FR": "Planchodrome Bearbrook",
           "ADDRESS": "8720 Russell Road",
           "ADDRESS_FR": "8720, chemin Russell",
@@ -88,7 +98,12 @@
           "DESCRIPT_1": "Surface d'asphalte plane, 5 modules",
           "PICTURE_LI": null,
           "PICTURE_DE": null,
-          "PICTURE__1": null
+          "PICTURE__1": null,
+          "city": "Sopot",
+          "river": "motlawa",
+          "postalCode": "81-824",
+          "street": "Parkowa",
+          "streetNumber": "64"
         },
         "geometry": {
           "type": "Point",
@@ -100,7 +115,7 @@
         "properties": {
           "PARK_ID": 4,
           "FACILITYID": 28014,
-          "NAME": "Bearbrook Skateboard Park",
+          "NAME": "KAJAK 4",
           "NAME_FR": "Planchodrome Bearbrook",
           "ADDRESS": "8720 Russell Road",
           "ADDRESS_FR": "8720, chemin Russell",
@@ -118,7 +133,12 @@
           "DESCRIPT_1": "Surface d'asphalte plane, 5 modules",
           "PICTURE_LI": null,
           "PICTURE_DE": null,
-          "PICTURE__1": null
+          "PICTURE__1": null,
+          "city": "Gdansk",
+          "river": "motlawa",
+          "postalCode": "80-822",
+          "street": "Żabi Kruk",
+          "streetNumber": "15"
         },
         "geometry": {
           "type": "Point",
@@ -130,7 +150,7 @@
         "properties": {
           "PARK_ID": 5,
           "FACILITYID": 28014,
-          "NAME": "Bearbrook Skateboard Park",
+          "NAME": "KAJAK 5",
           "NAME_FR": "Planchodrome Bearbrook",
           "ADDRESS": "8720 Russell Road",
           "ADDRESS_FR": "8720, chemin Russell",
@@ -148,7 +168,12 @@
           "DESCRIPT_1": "Surface d'asphalte plane, 5 modules",
           "PICTURE_LI": null,
           "PICTURE_DE": null,
-          "PICTURE__1": null
+          "PICTURE__1": null,
+          "city": "Gdansk",
+          "river": "motlawa",
+          "postalCode": "80-246",
+          "street": "Władysława Pniewskiego",
+          "streetNumber": "7/1"
         },
         "geometry": {
           "type": "Point",
@@ -160,7 +185,7 @@
         "properties": {
           "PARK_ID": 6,
           "FACILITYID": 28014,
-          "NAME": "Bearbrook Skateboard Park",
+          "NAME": "KAJAK 6",
           "NAME_FR": "Planchodrome Bearbrook",
           "ADDRESS": "8720 Russell Road",
           "ADDRESS_FR": "8720, chemin Russell",
@@ -178,7 +203,12 @@
           "DESCRIPT_1": "Surface d'asphalte plane, 5 modules",
           "PICTURE_LI": null,
           "PICTURE_DE": null,
-          "PICTURE__1": null
+          "PICTURE__1": null,
+          "city": "Gdansk",
+          "river": "motlawa",
+          "postalCode": "80-561",
+          "street": "Pokładowa ",
+          "streetNumber": "9"
         },
         "geometry": {
           "type": "Point",

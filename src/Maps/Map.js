@@ -1,41 +1,29 @@
-import React, { useState, useEffect } from "react";
+import React, { useState,  } from "react";
 import { GoogleMap, Marker, InfoWindow } from "react-google-maps";
 import * as offersInfo from "./offersInfo.json";
-import markerIcon from "../img/place.svg"
+import markerIcon from "../img/place.svg";
+import RezervationForm from "../Forms/RezervationForm"
 
 
 function Map(){
 
-    const [selectedPark, setSelectedPark] = useState(null);
+    const [selectedPlace, setSelectedPlace] = useState(null);
 
-    useEffect(() => {
-      const listener = e => {
-        if (e.key === "Escape") {
-          setSelectedPark(null);
-        }
-      };
-      window.addEventListener("keydown", listener);
-  
-      return () => {
-        window.removeEventListener("keydown", listener);
-      };
-    }, []);
   
     return (
       <GoogleMap
         defaultZoom={10}
         defaultCenter={{ lat: 54.352024, lng: 18.646639 }}
-        // defaultOptions={{ styles: mapStyles }}
       >
-        {offersInfo.features.map(park => (
+        {offersInfo.features.map(place => (
           <Marker
-            key={park.properties.PARK_ID}
+            key={place.properties.PARK_ID}
             position={{
-              lat: park.geometry.coordinates[0],
-              lng: park.geometry.coordinates[1]
+              lat: place.geometry.coordinates[0],
+              lng: place.geometry.coordinates[1]
             }}
             onClick={() => {
-              setSelectedPark(park);
+              setSelectedPlace(place);
             }}
             icon={{
               url: markerIcon,
@@ -44,19 +32,19 @@ function Map(){
           />
         ))}
   
-        {selectedPark && (
+        {selectedPlace && (
           <InfoWindow
             onCloseClick={() => {
-              setSelectedPark(null);
+              setSelectedPlace(null);
             }}
             position={{
-              lat: selectedPark.geometry.coordinates[0],
-              lng: selectedPark.geometry.coordinates[1]
+              lat: selectedPlace.geometry.coordinates[0],
+              lng: selectedPlace.geometry.coordinates[1]
             }}
           >
             <div>
-              <h2>{selectedPark.properties.NAME}</h2>
-              <p>{selectedPark.properties.DESCRIPTIO}</p>
+              <h2>{selectedPlace.properties.NAME}</h2>
+              <RezervationForm/>
             </div>
           </InfoWindow>
         )}
