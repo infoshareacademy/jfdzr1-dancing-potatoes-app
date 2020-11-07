@@ -3,17 +3,17 @@ import React from "react";
 import BarChart from "./BarChart";
 import PieChart from "./PieChart";
 import ReactPlayer from "react-player/youtube";
-// import homeImage from "./images/homeImage.jpg";
-// import paddle from "./images/paddle.png";
+import homeImage from "./images/homeImage.jpg";
+import paddle from "./images/paddle.png";
 import { homeStyles } from "./Home-styles";
 import Carousel from "./carousel";
-// import ScrollAnimation from "react-animate-on-scroll";
+import ScrollAnimation from "react-animate-on-scroll";
 import waterfall from "./images/waterfall.gif";
-// import Typography from '@material-ui/core/Typography';
+import Typography from '@material-ui/core/Typography';
 import logoWhite from "./images/logoWhite.png";
 
 export default function Home() {
-  // const classes = homeStyles();
+  const classes = homeStyles();
   return (
     <div>
       <div
