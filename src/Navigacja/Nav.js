@@ -94,19 +94,19 @@ function Nav({ children }) {
               </ListItemIcon>
               <ListItemText primary={'Home'}/>
             </ListItem>
-            
+{/*             
             <ListItem button component = {Link} to = '/ulubione' className={classes.menuTextStyle}>
               <ListItemIcon className={classes.menuTextStyle}>
                 <FavoriteIcon className={classes.menuTextStyle}/>
               </ListItemIcon>
               <ListItemText primary={'Ulubione'} />
-              </ListItem>
+              </ListItem> */}
 
             <ListItem button component = {Link} to = '/kayak' className={classes.menuTextStyle}>
               <ListItemIcon className={classes.menuTextStyle}>
                 <RowingIcon className={classes.menuTextStyle}/>
               </ListItemIcon>
-              <ListItemText primary={'Kayak'} />
+              <ListItemText primary={'Oferty'} />
             </ListItem>
         
             <ListItem button component = {Link} to = '/mapa' className={classes.menuTextStyle}>

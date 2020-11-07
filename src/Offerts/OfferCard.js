@@ -8,7 +8,7 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import Slide from "@material-ui/core/Slide";
-
+import { Link } from 'react-router-dom';
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
@@ -121,6 +121,7 @@ export default function OfferCard(props) {
               variant="contained"
               color="primary"
               text="Zobacz na mapie"
+              component = {Link} to = '/mapa' 
               style={{
                 width: "200px",
                 height: "50px"

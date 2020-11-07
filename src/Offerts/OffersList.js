@@ -25,7 +25,7 @@ export const offers = [
             }
         ],
       
-        "level": "medium",
+        "level": "średni",
         "location": {
             "city": "Gdańsk",
             "river": "Motława",
@@ -65,7 +65,7 @@ export const offers = [
             }
         ],
       
-        "level": "hard",
+        "level": "trudny",
         "location": {
             "city": "Gdańsk",
             "river": "motlawa",
@@ -105,7 +105,7 @@ export const offers = [
             }
         ],
       
-        "level": "easy",
+        "level": "łatwy",
         "location": {
             "city": "Sopot",
             "river": "motlawa",
@@ -145,7 +145,7 @@ export const offers = [
             }
         ],
       
-        "level": "medium",
+        "level": "średni",
         "location": {
             "city": "Gdańsk",
             "river": "motlawa",
@@ -185,7 +185,7 @@ export const offers = [
             }
         ],
       
-        "level": "easy",
+        "level": "łatwy",
         "location": {
             "city": "Gdańsk",
             "river": "motlawa",
@@ -225,7 +225,7 @@ export const offers = [
             }
         ],
       
-        "level": "easy",
+        "level": "łatwy",
         "location": {
             "city": "Gdynia",
             "river": "motlawa",
@@ -264,7 +264,7 @@ export const offers = [
             }
         ],
       
-        "level": "hard",
+        "level": "trudny",
         "location": {
             "city": "Gdańsk",
             "river": "motlawa",
@@ -303,7 +303,7 @@ export const offers = [
             }
         ],
       
-        "level": "easy",
+        "level": "łatwy",
         "location": {
             "city": "Szczecin",
             "river": "motlawa",
@@ -342,7 +342,7 @@ export const offers = [
             }
         ],
       
-        "level": "easy",
+        "level": "łatwy",
         "location": {
             "city": "Gdańsk",
             "river": "motlawa",
@@ -381,7 +381,7 @@ export const offers = [
             }
         ],
       
-        "level": "easy",
+        "level": "łatwy",
         "location": {
             "city": "Gdańsk",
             "river": "motlawa",
@@ -420,7 +420,7 @@ export const offers = [
             }
         ],
       
-        "level": "hard",
+        "level": "trudny",
         "location": {
             "city": "Gdynia",
             "river": "motlawa",
@@ -459,7 +459,7 @@ export const offers = [
             }
         ],
       
-        "level": "medium",
+        "level": "średni",
         "location": {
             "city": "Gdańsk",
             "river": "motlawa",
@@ -498,7 +498,7 @@ export const offers = [
             }
         ],
       
-        "level": "medium",
+        "level": "średni",
         "location": {
             "city": "Gdańsk",
             "river": "motlawa",
@@ -537,7 +537,7 @@ export const offers = [
             }
         ],
       
-        "level": "easy",
+        "level": "łatwy",
         "location": {
             "city": "Gdańsk",
             "river": "motlawa",
@@ -576,7 +576,7 @@ export const offers = [
             }
         ],
       
-        "level": "easy",
+        "level": "łatwy",
         "location": {
             "city": "Gdańsk",
             "river": "motlawa",
@@ -615,7 +615,7 @@ export const offers = [
             }
         ],
       
-        "level": "easy",
+        "level": "łatwy",
         "location": {
             "city": "Poznań",
             "river": "motlawa",
