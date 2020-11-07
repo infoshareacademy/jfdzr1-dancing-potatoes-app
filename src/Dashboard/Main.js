@@ -2,14 +2,11 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Typography from '@material-ui/core/Typography';
 import { mainStyles } from './MainStyles';
-<<<<<<< HEAD
 import Map from '../Maps/Map';
-import {  withScriptjs, withGoogleMap } from 'react-google-maps'
-
-=======
+import {  withScriptjs, withGoogleMap } from 'react-google-maps';
 import Home from "../Home/Home";
 import OfferCards from '../Offerts/OfferCards';
->>>>>>> master
+
 function Main() {
         const classes = mainStyles();
         const WrappedMap = withScriptjs(withGoogleMap(Map));
