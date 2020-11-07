@@ -2,7 +2,7 @@ import React, { useState,  } from "react";
 import { GoogleMap, Marker, InfoWindow } from "react-google-maps";
 import * as offersInfo from "./offersInfo.json";
 import markerIcon from "../img/place.svg";
-import RezervationForm from "../Forms/RezervationForm"
+import RezervationForm from "../Forms/RezervationForm";
 
 
 function Map(){
@@ -44,6 +44,10 @@ function Map(){
           >
             <div>
               <h2>{selectedPlace.properties.NAME}</h2>
+              <h3>Adres</h3>
+              <h4>{selectedPlace.properties.city}</h4>
+              <p>{selectedPlace.properties.street} {selectedPlace.properties.streetNumber}</p>
+              <p>{selectedPlace.properties.postalCode}</p>
               <RezervationForm/>
             </div>
           </InfoWindow>

@@ -7,7 +7,7 @@ const RezFormStyles = makeStyles((theme) => ({
     root: {
       '& > *': {
         margin: theme.spacing(1),
-        width: '30ch',
+        width: '90%',
         display: 'flex',
         flexDirection: 'column',
       },
