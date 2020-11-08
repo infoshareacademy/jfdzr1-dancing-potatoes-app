@@ -40,9 +40,6 @@ const theme = createMuiTheme({
 });
 
 function App() {
-  fetch('/offers.json')
-  .then((r) => {return r.json() })
-  .then (x => console.log(x))
   return (
     <MuiThemeProvider theme={theme}>
       <Nav>
