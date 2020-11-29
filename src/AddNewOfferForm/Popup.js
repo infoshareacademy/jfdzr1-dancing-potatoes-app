@@ -24,7 +24,7 @@ const theme = createMuiTheme({
   }});
 
 export default function Popup(props) {
-  const { children, openPopup, setOpenPopup } = props;
+  const { children, openPopup, setOpenPopup, onSubmit, handleOnSubmit } = props;
   const classes = useStyles();
   return (
     <ThemeProvider theme={theme}>
@@ -45,7 +45,7 @@ export default function Popup(props) {
             </ActionButton>
           </div>
         </DialogTitle>
-        <DialogContent>{children}</DialogContent>
+        <DialogContent>{children} </DialogContent>
         <div style={{
           display: "flex",
           justifyContent: "center"
@@ -55,6 +55,7 @@ export default function Popup(props) {
             color="primary"
             type="submit"
             text="Dodaj"
+      onSubmit={handleOnSubmit}
             className={classes.ButtonAdd}
             style={{ 
               width: "100px", 

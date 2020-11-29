@@ -25,11 +25,14 @@ import Popup from "../AddNewOfferForm/Popup";
 import AddNewOfferForm from '../AddNewOfferForm/AddNewOfferForm';
 import Button from "../AddNewOfferForm/Button";
 
-function Nav({ children }) {
+function Nav({ children, isAdmin }) {
   const classes = navStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
-  const [openPopup, setOpenPopup] = React.useState(false);
+  const [openPopup, setOpenPopup, handleOnSubmit] = React.useState(false);
+  const onSubmit = () => {
+    handleOnSubmit();
+  }
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -58,6 +61,7 @@ function Nav({ children }) {
           >
             <MenuIcon />
           </IconButton>
+          {isAdmin &&(
             <Button 
             text = "Dodaj ofertę"
             color="secondary"
@@ -65,7 +69,7 @@ function Nav({ children }) {
             startIcon = {<AddIcon />}
             className = {classes.newButton}
             onClick = {() => setOpenPopup(true)}
-            />
+            />)}
         </Toolbar>
       </AppBar>
       <Drawer
@@ -94,14 +98,14 @@ function Nav({ children }) {
               </ListItemIcon>
               <ListItemText primary={'Home'}/>
             </ListItem>
-{/*             
+            {isAdmin &&(
             <ListItem button component = {Link} to = '/ulubione' className={classes.menuTextStyle}>
               <ListItemIcon className={classes.menuTextStyle}>
                 <FavoriteIcon className={classes.menuTextStyle}/>
               </ListItemIcon>
               <ListItemText primary={'Ulubione'} />
-              </ListItem> */}
-
+              </ListItem>
+            )}
             <ListItem button component = {Link} to = '/kayak' className={classes.menuTextStyle}>
               <ListItemIcon className={classes.menuTextStyle}>
                 <RowingIcon className={classes.menuTextStyle}/>
@@ -122,7 +126,7 @@ function Nav({ children }) {
       <Popup
       openPopup = {openPopup}
       setOpenPopup={setOpenPopup}>
-      <AddNewOfferForm />
+      <AddNewOfferForm onSubmit={handleOnSubmit}/>
      </Popup>
     </div>
     

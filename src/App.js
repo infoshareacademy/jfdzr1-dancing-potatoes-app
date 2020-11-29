@@ -39,10 +39,12 @@ const theme = createMuiTheme({
   }
 });
 
-function App() {
+function App(props) {
+
   return (
     <MuiThemeProvider theme={theme}>
-      <Nav>
+      <Nav isAdmin={props.isAdmin}>
+          
       <Main />
       </Nav>
       </MuiThemeProvider>

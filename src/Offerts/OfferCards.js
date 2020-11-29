@@ -5,8 +5,8 @@ import Button from "@material-ui/core/Button";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import { Typography } from "@material-ui/core";
 
-
 const DATABASE_URL = 'https://dancing-app-77d2a.firebaseio.com'
+
 
 class Cards extends React.Component {
   state = {
@@ -56,6 +56,7 @@ class Cards extends React.Component {
   };
 
   render() {
+  
     const theme = createMuiTheme({
       palette: {
         primary: {
@@ -72,6 +73,8 @@ class Cards extends React.Component {
         tonalOffset: 0.2,
       },
     });
+
+  
     return (
       <div>
         <TextField
