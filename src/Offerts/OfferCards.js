@@ -1,18 +1,35 @@
 import React from "react";
-import { offers } from "./OffersList";
 import OfferCard from "./OfferCard";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import { Typography } from "@material-ui/core";
 
+
+const DATABASE_URL = 'https://dancing-app-77d2a.firebaseio.com'
+
 class Cards extends React.Component {
   state = {
-    offers: offers,
+    offers: [],
     sorter: undefined,
     name: "",
     level: "",
   };
+
+  componentDidMount() {
+    fetch(`${DATABASE_URL}/offers.json`)
+    .then(response => response.json())
+    .then(data => {
+        const formattedData = Object.keys(data)
+    .map(key => ({
+      id: key,
+      ...data[key]
+    }));
+    this.setState({
+      offers: formattedData
+    })
+    })
+  }
 
   sortByName = () => {
     this.setState(() => ({
