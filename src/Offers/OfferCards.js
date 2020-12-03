@@ -3,8 +3,7 @@ import { offers } from "./OffersList";
 import OfferCard from "./OfferCard";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
-import { Typography } from "@material-ui/core";
+import { createMuiTheme } from "@material-ui/core/styles";
 
 class Cards extends React.Component {
   state = {
@@ -24,6 +23,7 @@ class Cards extends React.Component {
     this.setState(() => ({
       sorter: (a, b) => a.level.localeCompare(b.level),
     }));
+    console.log(this.state.sorter);
   };
 
   handleNameChange = (name) => {

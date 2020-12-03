@@ -48,8 +48,6 @@ export const useStyles = makeStyles((theme) => ({
       display: "grid",
       width: "100%",
     },
-    "& .MuiOutlinedInput-input":{
-    },
-  
+    "& .MuiOutlinedInput-input": {},
   },
 }));

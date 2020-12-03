@@ -17,8 +17,9 @@ export const mainStyles = makeStyles((theme) => ({
   },
   content: {
     flexGrow: 1,
-    padding: theme.spacing(3),
-    height: "800px",
+    padding: theme.spacing(0),
+    paddingTop: '64px',
+    height: "100vh",
     background: 'linear-gradient(355deg, rgba(227,247,244,0.8575805322128851) 9%, rgba(129,164,195,1) 64%, rgba(166,226,198,1) 100%)'
     
   },

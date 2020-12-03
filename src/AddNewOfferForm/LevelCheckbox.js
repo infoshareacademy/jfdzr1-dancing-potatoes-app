@@ -6,7 +6,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Button from './Button';
 import AddIcon from '@material-ui/icons/Add';
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import CloseIcon from "@material-ui/icons/Close";
 import ActionButton from "./ActionButton";
 
@@ -24,8 +24,8 @@ const useStyles = makeStyles((theme) => ({
 
 export default function LevelCheckbox(props) {
   const classes = useStyles();
-  const [state, setState] = React.useState({
-    easy: true,
+  const [state, setState] = useState({
+    easy: false,
     medium: false,
     hard: false,
   });
@@ -36,7 +36,6 @@ export default function LevelCheckbox(props) {
   };
 
   const { easy, medium, hard } = state;
-  const error = [easy, medium, hard].filter((v) => v).length !== 2;
 
   return (
 

@@ -1,11 +1,8 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
-import Fade from "@material-ui/core/Fade";
 import LevelCheckbox from "./LevelCheckbox";
-import ActionButton from "./ActionButton";
-import CloseIcon from "@material-ui/icons/Close"
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -23,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function LevelModal() {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
     setOpen(true);
@@ -35,17 +32,19 @@ export default function LevelModal() {
 
   return (
     <div>
-      <button type="button" 
-      className="LevelButton" 
-      onClick={handleOpen}
-      style={{backgroundColor: "white"}}>
+      <button
+        type="button"
+        className="LevelButton"
+        onClick={handleOpen}
+        style={{ backgroundColor: "white" }}
+      >
         Wybierz poziom trudności
       </button>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
         className={classes.modal}
-        open = {open}
+        open={open}
         onClose={handleClose}
         onRequestClose={handleClose}
         closeAfterTransition
@@ -54,11 +53,7 @@ export default function LevelModal() {
           timeout: 500,
         }}
       >
-       
-          <LevelCheckbox 
-            handleClose={handleClose}
-          />
-      
+        <LevelCheckbox handleClose={handleClose} />
       </Modal>
     </div>
   );
