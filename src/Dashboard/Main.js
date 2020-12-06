@@ -1,10 +1,10 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 import { mainStyles } from "./MainStyles";
-import Map from "../Maps/Map";
 import { withScriptjs, withGoogleMap } from "react-google-maps";
-import Home from "../Home/Home";
-import OfferCards from "../Offers/OfferCards";
+import Home from "./Home/Home.js";
+import OfferCards from "./Offers/OfferCards.js";
+import Map from "./Map/Map.js";
 
 function Main() {
   const classes = mainStyles();

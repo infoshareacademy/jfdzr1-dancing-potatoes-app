@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { GoogleMap, Marker, InfoWindow } from "react-google-maps";
 import * as offersInfo from "./offersInfo.json";
-import markerIcon from "../img/place.svg";
-import RezervationForm from "../Forms/RezervationForm";
+import markerIcon from "../../img/place.svg";
+import RezervationForm from "../../Forms/RezervationForm";
 
 export default function Map() {
   const [selectedPlace, setSelectedPlace] = useState(null);

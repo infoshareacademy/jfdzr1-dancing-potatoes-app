@@ -1,7 +1,7 @@
 import { CardActions, CardContent } from "@material-ui/core";
 import React, { useState, forwardRef } from "react";
 import Card from "@material-ui/core/Card";
-import Button from "../AddNewOfferForm/Button";
+import Button from "../../AddNewOfferForm/Button";
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";

@@ -1,7 +1,7 @@
 import React from "react";
-import BarChart from "./BarChart";
-import PieChart from "./PieChart";
-import Carousel from "./Carousel";
+import BarChart from "./HomeFeatures/BarChart";
+import PieChart from "./HomeFeatures/PieChart";
+import Carousel from "./HomeFeatures/Carousel";
 import waterfall from "./images/waterfall.gif";
 
 export default function Home() {
