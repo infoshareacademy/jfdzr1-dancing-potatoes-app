@@ -55,7 +55,7 @@ export default function Popup(props) {
             color="primary"
             type="submit"
             text="Dodaj"
-      onSubmit={handleOnSubmit}
+            onSubmit={handleOnSubmit}
             className={classes.ButtonAdd}
             style={{ 
               width: "100px", 

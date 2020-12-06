@@ -61,7 +61,7 @@ function Nav({ children, isAdmin }) {
           >
             <MenuIcon />
           </IconButton>
-          {isAdmin &&(
+          {/* {isAdmin &&( */}
             <Button 
             text = "Dodaj ofertę"
             color="secondary"
@@ -69,7 +69,8 @@ function Nav({ children, isAdmin }) {
             startIcon = {<AddIcon />}
             className = {classes.newButton}
             onClick = {() => setOpenPopup(true)}
-            />)}
+            />
+            {/* )} */}
         </Toolbar>
       </AppBar>
       <Drawer
@@ -98,14 +99,14 @@ function Nav({ children, isAdmin }) {
               </ListItemIcon>
               <ListItemText primary={'Home'}/>
             </ListItem>
-            {isAdmin &&(
+            {/* {isAdmin &&( */}
             <ListItem button component = {Link} to = '/ulubione' className={classes.menuTextStyle}>
               <ListItemIcon className={classes.menuTextStyle}>
                 <FavoriteIcon className={classes.menuTextStyle}/>
               </ListItemIcon>
               <ListItemText primary={'Ulubione'} />
               </ListItem>
-            )}
+            {/* )} */}
             <ListItem button component = {Link} to = '/kayak' className={classes.menuTextStyle}>
               <ListItemIcon className={classes.menuTextStyle}>
                 <RowingIcon className={classes.menuTextStyle}/>
@@ -125,6 +126,7 @@ function Nav({ children, isAdmin }) {
       {children}
       <Popup
       openPopup = {openPopup}
+      onSubmit={handleOnSubmit}
       setOpenPopup={setOpenPopup}>
       <AddNewOfferForm onSubmit={handleOnSubmit}/>
      </Popup>
