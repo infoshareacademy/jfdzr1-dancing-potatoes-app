@@ -28,7 +28,7 @@ function Main() {
                     </Route>
 
                     <Route path = '/mapa'>
-                        <div style = {{width: '92vw', height: '87vh'}}>
+                        <div style = {{width: '100%', height: '87vh'}}>
                             <WrappedMap 
                             googleMapURL = {`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyABXq7l1yJ16e4DGL-Wpup5WJ_AlIJdISk`}
                             loadingElement = { <div style={{ height: '100%' }} /> }

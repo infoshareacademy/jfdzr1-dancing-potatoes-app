@@ -1,53 +1,85 @@
-import React, { useState,  } from "react";
+import React from "react";
 import { GoogleMap, Marker, InfoWindow } from "react-google-maps";
-import * as offersInfo from "./offersInfo.json";
-import markerIcon from "../img/place.svg";
+import markerIcon from "../img/location2.png";
 import RezervationForm from "../Forms/RezervationForm";
 
+const DATABASE_URL = 'https://dancing-app-77d2a.firebaseio.com'
 
-function Map(){
+class Map extends React.Component {
 
-    const [selectedPlace, setSelectedPlace] = useState(null);
+  state ={
+    selectedPlace: null,
+    offersList: []
+  }
+
+  fetchOffers = () => {
+    fetch(`${DATABASE_URL}/offers.json`)
+    .then(r => r.json())
+    .then(data => {
+      if (!data) {
+        this.setState({
+          offersList: []
+        })
+      } else {
+        const formattedData = Object.keys(data)
+        .map(key => {
+          return {
+            id: key,
+            ...data[key]
+          }
+        })
+        console.log(formattedData);
+        this.setState({
+          offersList: formattedData
+        })
+      }
+    })
+  }
+
+  componentDidMount() {
+    this.fetchOffers()
+  }
 
   
+  render(){
     return (
       <GoogleMap
-        defaultZoom={10}
-        defaultCenter={{ lat: 54.352024, lng: 18.646639 }}
+        defaultZoom={6.8}
+        defaultCenter={{ lat: 51.919437, lng: 19.145136 }}
       >
-        {offersInfo.features.map(place => (
+        {this.state.offersList.map(place => (
           <Marker
-            key={place.properties.PARK_ID}
+            key={place.id}
             position={{
-              lat: place.geometry.coordinates[0],
-              lng: place.geometry.coordinates[1]
+              lat: place.location.lat,
+              lng: place.location.lng 
             }}
             onClick={() => {
-              setSelectedPlace(place);
+              this.setState({
+                selectedPlace: place
+              })
             }}
             icon={{
               url: markerIcon,
-              scaledSize: new window.google.maps.Size(70, 50)
+              scaledSize: new window.google.maps.Size(47, 45)
             }}
           />
         ))}
   
-        {selectedPlace && (
+        {this.state.selectedPlace && (
           <InfoWindow
             onCloseClick={() => {
-              setSelectedPlace(null);
+              this.setState({
+                selectedPlace: null
+              })
             }}
             position={{
-              lat: selectedPlace.geometry.coordinates[0],
-              lng: selectedPlace.geometry.coordinates[1]
+              lat: Number(this.state.selectedPlace.location.lat),
+              lng: Number(this.state.selectedPlace.location.lng)
             }}
           >
             <div>
-              <h2>{selectedPlace.properties.NAME}</h2>
-              <h3>Adres</h3>
-              <h4>{selectedPlace.properties.city}</h4>
-              <p>{selectedPlace.properties.street} {selectedPlace.properties.streetNumber}</p>
-              <p>{selectedPlace.properties.postalCode}</p>
+              <h4>Kajak</h4>
               <RezervationForm/>
             </div>
           </InfoWindow>
@@ -55,8 +87,7 @@ function Map(){
       </GoogleMap>
     );
 
-    
-
+  }  
     
 }
 
