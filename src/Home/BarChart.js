@@ -1,18 +1,52 @@
-import React, {Component} from 'react';
+import React, {Component, useState} from 'react';
+import { Prev } from 'react-bootstrap/esm/PageItem';
 import {Bar, Line, Pie} from 'react-chartjs-2';
+const DATABASE_URL = 'https://dancing-app-77d2a.firebaseio.com'
 
 class BarChart extends Component {
+  state = {
+    offers: [],
+  }
+
+  componentDidMount() {
+    fetch(`${DATABASE_URL}/offers.json`)
+    .then(response => response.json())
+    .then(data => {
+      const formattedData = Object.keys(data)
+    .map(key => ({
+      id: key,
+      ...data[key]
+    }))
+    this.setState({
+      offers: formattedData
+    })
+    })
+    
+  }
+
+  filteringData(){
+    let counter = 0;
+    this.state.offers.map((element)=>{
+      console.log(element)
+      if (element.level == "łatwy")
+      {counter++}
+
+    })
+    // console.log(counter)
+    return counter
+    }
+  
 
   constructor(props) {
       super(props);
       this.state = {
           chartData : {
-            labels: ['marzec', 'kwiecień', 'maj', 'czerwiec', 'lipiec'],
+            labels: ['łatwy', 'średni', 'trudny'],
             datasets: [
               {
       
                 data: [
-                  15,
+                  this.counter,
                   24,
                   46,
                   70,
@@ -33,6 +67,7 @@ class BarChart extends Component {
       }
   }
     render () {
+      console.log(this.state.offers)
 
       return (
         <div className="chart"
