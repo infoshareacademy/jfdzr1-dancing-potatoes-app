@@ -6,7 +6,6 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import TableCell from '@material-ui/core/TableCell';
 import TableBody from '@material-ui/core/TableBody';
-import Button from '@material-ui/core/Button';
 import Rating from '@material-ui/lab/Rating';
 
 import AddRating from "../Rating/AddRating"
@@ -64,12 +63,18 @@ class RatingTable extends React.Component {
             component={Paper}
             style={{ width: '50%' }}
             >
-                <Typography variant="h3" style={{ display: 'flax', textAlign: 'center' }} >Opinie</Typography>
+                <Typography variant="h3" style={{ padding: '10px', textAlign: 'center' }} >Opinie</Typography>
                     <TableHead  >
-                        <TableRow  >
-                            <TableCell>Autor</TableCell>
-                            <TableCell>Komentarz</TableCell>
-                            <TableCell>Ocena</TableCell>
+                        <TableRow style={{ justifyContent: 'space-between' }} >
+                            <TableCell
+                                style={{ fontSize: '20px', width: '33%' }}
+                            >Autor</TableCell>
+                            <TableCell
+                                style={{ fontSize: '20px', width: '45%' }}
+                            >Komentarz</TableCell>
+                            <TableCell
+                                style={{ fontSize: '20px', width: '33%', textAlign: 'center' }}
+                            >Ocena</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>

@@ -58,6 +58,7 @@ class AddRating extends React.Component {
     return (
       <>
         <Button 
+        style={{ marginTop: '10px', width: '20%', }}
         variant="contained" 
         color='primary'
         onClick={this.openModal}
@@ -107,7 +108,7 @@ class AddRating extends React.Component {
                                     color="primary"
                                     type="submit"
                                 >
-                                    Add
+                                    Wyślij
                                 </Button>
                             </form>
                         </Paper>
