@@ -3,111 +3,244 @@ import { Grid, TextField, makeStyles } from "@material-ui/core";
 import VehiclesModal, { vehiclesModal } from "./VehiclesModal";
 import LevelModal from "./LevelModal";
 import { useStyles } from "./OfferStyles";
+import {default as UUID} from "node-uuid";import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
+import FormLabel from '@material-ui/core/FormLabel';
+
 import Button from "./Button";
+const DATABASE_URL = "https://dancing-app-77d2a.firebaseio.com";
 
-const initialValues = {
-  id: 0,
-  title: "",
-  onePerson: "",
-  twoPeople: "",
-  Group: "",
-  vehicles: "",
-  city: "",
-  river: "",
-  postalCode: "",
-  street: "",
-  streetNumber: "",
-  description: "",
-  level: "",
-  imageURL: "",
-};
+export default class AddNewOfferForm extends React.Component {
+  constructor(props){
+    super(props)
+  this.state = {
+      title: "",
+      id: UUID.v4(),
+      offer:[
+        {
+            type: "kajak jednoosobowy",
+            numberOfPeople: 1,
+            price: 15
+        },
+        {
+            type: "kajak dwusobowy",
+            numberOfPeople: 2,
+            price: 25
+        },
+        {
+            type: "kajak group",
+            numberOfPeople: 10,
+            price: 66
+        },
+        {
+            type: "rowerek 4 osobowy",
+            numberOfPeople: 4,
+            price: 12
+        }
+      ],
+    level: "",
+    location: {},
+    imageUrl: "",
+    description: ""
+  };
 
-export default function AddNewOfferForm() {
-  const classes = useStyles();
-  const [values, setValues] = useState(initialValues);
+}
+  handleOnChange = (event) => {
+    this.setState({
+        [event.target.name]: event.target.value
+    })
+}
 
-  return (
-    <form className={classes.root}>
-          <div class="diwek">
+  handleOnLocationChange = (event) => {
+    this.setState({ location: {...this.state.location,  [event.target.name]: event.target.value}})
+  }
+  handleOnPriceChange = (event) => {
+    this.setState({ offer: {...this.state.offer,  [event.target.name]: event.target.value}})
+  }
+
+handleOnSubmit = (event) => {
+  event.preventDefault();
+
+  fetch(`${DATABASE_URL}/offers.json`, {
+      method: 'POST',
+      body: JSON.stringify(this.state)
+  }).then(() => {
+      this.props.setOpenPopup();
+  })
+}
+
+  render() {
+    const { setOpenPopup } = this.props;
+    return (
+      <form className={this.classes}
+      onSubmit={this.handleOnSubmit}
+      >
+        <div class="diwek">
+     
+          <TextField
+            variant="outlined"
+            label="Jak się nazywa Twoja firma?"
+            value={this.state.title}
+            name="title"
+            onChange={this.handleOnChange}
+          />
+        </div>
+        <div
+          style={{
+            display: "flex",
+            alignSelf: "center",
+            lineHeight: 1.1,
+            width: "100%",
+            marginTop: "10px",
+          }}
+        >
+         <FormControl component="fieldset">
+      <FormLabel component="legend">Poziom trudności</FormLabel>
+      <RadioGroup aria-label="level" name="level" value={this.state.level} onChange={this.handleOnChange}>
+        <FormControlLabel value="łatwy" control={<Radio />} label="Łatwy" />
+        <FormControlLabel value="średni" control={<Radio />} label="Średni" />
+        <FormControlLabel value="trudny" control={<Radio />} label="Trudny" />      </RadioGroup>
+    </FormControl>
+          <div style={{ display: "flex", width: "81%" }}>
             <TextField
               variant="outlined"
-              label="Jak się nazywa Twoja firma?"
-              value={setValues.title}
+              label="Cena za kajak jednoosobowy"
+              name="0.price"
+              value={this.state.offer.price}
+              style={{ marginLeft: "10px" }}
+              onChange={this.handleOnPriceChange}
             />
-          </div>
-          <div style={{display: "flex", alignSelf:"center", lineHeight:1.10, width: "100%", marginTop: '10px'}}>
-            <LevelModal />
-            <div style={{display: "flex", width: "81%"}}>
             <TextField
               variant="outlined"
-              label="Cena za osobę"
-              value={setValues.onePerson}
-              style={{marginLeft : "10px"}}
-            />
-            <TextField
-              variant="outlined"
-              label="Cena za dwie osoby"
-              value={setValues.twoPeople}
-              style={{marginLeft : "10px"}}
+              label="Cena za kajak dwuosobowy"
+              name="1.price"
+              value={this.state.price}
+              style={{ marginLeft: "10px" }}
+              onChange={this.handleOnPriceChange}
             />
             <TextField
               variant="outlined"
               label="Cena za osobę dla grup"
-              value={setValues.Group}
-              style={{marginLeft : "10px"}}
+              name="2.price"
+              value={this.state.price}
+              style={{ marginLeft: "10px" }}
+              onChange={this.handleOnPriceChange}
             />
-            <VehiclesModal />
-          </div></div>
- 
-          <div style={{
-            display: "flex", 
+              <TextField
+              variant="outlined"
+              label="Cena za rower wodny"
+              name="3.price"
+              value={this.state.price}
+              style={{ marginLeft: "10px" }}
+              onChange={this.handleOnPriceChange}
+            />
+           
+          </div>
+        </div>
+
+        <div
+          style={{
+            display: "flex",
             justifyContent: "center",
-            marginTop: "10px"}}>
-            <div style={{display: "flex"}}>
+            marginTop: "10px",
+            
+          }}
+        >
+          <div style={{ display: "flex" }}>
             <TextField
               variant="outlined"
               label="W jakim mieście?"
-              value={setValues.city}
+              name="city"
+              value={this.state.city}
+              onChange={this.handleOnLocationChange}
             />
             <TextField
               variant="outlined"
               label="Na jakiej wodzie?"
-              value={setValues.rier}
-              style={{marginLeft : "10px"}}
+              value={this.state.river}
+              name="river"
+              style={{ marginLeft: "10px" }}
+              onChange={this.handleOnLocationChange}
             />
             <TextField
               variant="outlined"
               label="Podaj kod pocztowy."
-              value={setValues.postalCode}
-              style={{marginLeft : "10px"}}
+              value={this.state.postalCode}
+              style={{ marginLeft: "10px" }}
+              name="postalCode"
+              onChange={this.handleOnLocationChange}
             />
             <TextField
               variant="outlined"
               label="Na jakiej ulicy?"
-              value={setValues.street}
-              style={{marginLeft : "10px"}}
+              value={this.state.street}
+              style={{ marginLeft: "10px" }}
+              onChange={this.handleOnLocationChange}
+              name="street"
             />
             <TextField
               variant="outlined"
               label="Jaki jest numer lokalu?"
-              value={setValues.streetNumber}
-              style={{marginLeft : "10px"}}
+              value={this.state.streetNumber}
+              style={{ marginLeft: "10px" }}
+              onChange={this.handleLocationOnChange}
+              name="streetNumber"
             />
-            </div>
           </div>
-          <div style={{display: "flex", width:"100%"}}>
+        </div>
+        <div style={{ display: "flex", width: "100%" }}>
           <TextField
             variant="outlined"
             label="Opisz swoje miejsce"
-            value={setValues.description}
-            style={{marginTop : "10px", width: "100%"}}
-          />
-          </div>
-        <div
-          style={{ display: "flex", justifyContent: "center", width: "100%", marginTop:"10px" }}
-        >
-         
+            value={this.state.description}
+            style={{ marginTop: "10px", width: "100%" }}
+            onChange={this.handleOnChange}
+            name="description"
+          />  <TextField
+          variant="outlined"
+          label="Dodaj adres URL zdjęcia"
+          value={this.state.imageUrl}
+          name="imageUrl"
+          onChange={this.handleOnChange}
+        />
         </div>
-    </form>
-  );
+     
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <Button
+            component="div"
+            color="primary"
+            type="submit"
+            text="Dodaj"
+            // className={this.classes.ButtonAdd}
+            style={{
+              width: "100px",
+              margin: "3px",
+            }}
+            onClick={this.handleOnSubmit}
+          />
+          <Button
+            component="div"
+            type="reset"
+            color="primary"
+            text="Resetuj"
+            // className={this.classes.ButtonReset}
+            style={{
+              width: "100px",
+              margin: "3px",
+            }}
+            onClick={() => {
+              setOpenPopup(false);
+            }}
+          />
+        </div>
+      </form>
+    );
+  }
 }

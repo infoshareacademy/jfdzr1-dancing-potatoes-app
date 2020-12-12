@@ -46,7 +46,7 @@ export default function LevelModal() {
         aria-describedby="transition-modal-description"
         className={classes.modal}
         open = {open}
-        onClose={handleClose}
+        onClose={handleClose}z
         onRequestClose={handleClose}
         closeAfterTransition
         BackdropComponent={Backdrop}

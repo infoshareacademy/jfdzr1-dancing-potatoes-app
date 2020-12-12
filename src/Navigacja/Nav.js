@@ -120,9 +120,11 @@ function Nav({ children }) {
       </Drawer>
       {children}
       <Popup
-      openPopup = {openPopup}
-      setOpenPopup={setOpenPopup}>
-      <AddNewOfferForm />
+        openPopup = {openPopup}
+        setOpenPopup={setOpenPopup}>
+      <AddNewOfferForm 
+       openPopup = {openPopup}
+       setOpenPopup={setOpenPopup}/>
      </Popup>
     </div>
     
