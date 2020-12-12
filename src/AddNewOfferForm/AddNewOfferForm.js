@@ -10,6 +10,7 @@ import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 
 import Button from "./Button";
+import { CodeSharp } from "@material-ui/icons";
 const DATABASE_URL = "https://dancing-app-77d2a.firebaseio.com";
 
 export default class AddNewOfferForm extends React.Component {
@@ -20,22 +21,22 @@ state = {
         {
             type: "kajak jednoosobowy",
             numberOfPeople: 1,
-            price: 15
+            price: ""
         },
         {
-            type: "kajak dwusobowy",
+            type: "kajak dwuosobowy",
             numberOfPeople: 2,
-            price: 25
+            price: ""
         },
         {
             type: "kajak group",
             numberOfPeople: 10,
-            price: 66
+            price: ""
         },
         {
             type: "rowerek 4 osobowy",
             numberOfPeople: 4,
-            price: 12
+            price: ""
         }
       ],
     level: "",
@@ -53,23 +54,25 @@ state = {
   handleOnLocationChange = (event) => {
     this.setState({ location: {...this.state.location,  [event.target.name]: event.target.value}})
   }
-  handleOnPriceChange = (event) => {
-        let pricing = this.state.offer.map((offer) => {
-          console.log(offer.type)
-          return event.target.name == offer.type;
-        
-        })
-        console.log(pricing)
-        .then(this.setState({offer: {...this.state.offer, [pricing]: event.target.value}}))
-  }
+handleOnPriceChange = (event) => {
+  let pricing = this.state.offer.find((offer) => {
+    console.log(offer.type)
+        return event.target.name === offer.type;
+  });
+  console.log(pricing)
+  pricing.price = event.target.value;
+    console.log(this.state)
+  this.setState({offer: [...this.state.offer]});}
+
 
 handleOnSubmit = (event) => {
   event.preventDefault();
 
   fetch(`${DATABASE_URL}/offers.json`, {
       method: 'POST',
-      body: JSON.stringify(this.state)
-  }).then(() => {
+      body: JSON.stringify(this.state),
+  })
+  .then(() => {
       this.props.setOpenPopup();
   })
 }
@@ -108,43 +111,16 @@ handleOnSubmit = (event) => {
         <FormControlLabel value="trudny" control={<Radio />} label="Trudny" />      </RadioGroup>
     </FormControl>
           <div style={{ display: "flex", width: "81%" }}>
-            <TextField
+            {this.state.offer.map(offer => <TextField
               variant="outlined"
-              label="Cena za kajak jednoosobowy"
-              name="kajak jednoosobowy"
-              value={this.state.price}
+              label={offer.label}
+              name={offer.type}
+              value={offer.price}
               style={{ marginLeft: "10px" }}
               onChange={this.handleOnPriceChange}
               required
-            />
-            <TextField
-              variant="outlined"
-              label="Cena za kajak dwuosobowy"
-              name="kajak dwuosobowy"
-              value={this.state.price}
-              style={{ marginLeft: "10px" }}
-              onChange={this.handleOnPriceChange}
-              required
-            />
-            <TextField
-              variant="outlined"
-              label="Cena za osobę dla grup"
-              name="kajak group"
-              value={this.state.price}
-              style={{ marginLeft: "10px" }}
-              onChange={this.handleOnPriceChange}
-              required
-            />
-              <TextField
-              variant="outlined"
-              label="Cena za rower wodny"
-              name="rowerek 4 osobowy"
-              value={this.state.price}
-              style={{ marginLeft: "10px" }}
-              onChange={this.handleOnPriceChange}
-              required
-            />
-           
+            />)}}
+            
           </div>
         </div>
 
