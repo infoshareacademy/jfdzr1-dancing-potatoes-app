@@ -13,9 +13,7 @@ import Button from "./Button";
 const DATABASE_URL = "https://dancing-app-77d2a.firebaseio.com";
 
 export default class AddNewOfferForm extends React.Component {
-  constructor(props){
-    super(props)
-  this.state = {
+state = {
       title: "",
       id: UUID.v4(),
       offer:[
@@ -46,7 +44,6 @@ export default class AddNewOfferForm extends React.Component {
     description: ""
   };
 
-}
   handleOnChange = (event) => {
     this.setState({
         [event.target.name]: event.target.value
@@ -57,7 +54,13 @@ export default class AddNewOfferForm extends React.Component {
     this.setState({ location: {...this.state.location,  [event.target.name]: event.target.value}})
   }
   handleOnPriceChange = (event) => {
-    this.setState({ offer: {...this.state.offer,  [event.target.name]: event.target.value}})
+        let pricing = this.state.offer.map((offer) => {
+          console.log(offer.type)
+          return event.target.name == offer.type;
+        
+        })
+        console.log(pricing)
+        .then(this.setState({offer: {...this.state.offer, [pricing]: event.target.value}}))
   }
 
 handleOnSubmit = (event) => {
@@ -85,6 +88,7 @@ handleOnSubmit = (event) => {
             value={this.state.title}
             name="title"
             onChange={this.handleOnChange}
+            required
           />
         </div>
         <div
@@ -107,34 +111,38 @@ handleOnSubmit = (event) => {
             <TextField
               variant="outlined"
               label="Cena za kajak jednoosobowy"
-              name="0.price"
-              value={this.state.offer.price}
+              name="kajak jednoosobowy"
+              value={this.state.price}
               style={{ marginLeft: "10px" }}
               onChange={this.handleOnPriceChange}
+              required
             />
             <TextField
               variant="outlined"
               label="Cena za kajak dwuosobowy"
-              name="1.price"
+              name="kajak dwuosobowy"
               value={this.state.price}
               style={{ marginLeft: "10px" }}
               onChange={this.handleOnPriceChange}
+              required
             />
             <TextField
               variant="outlined"
               label="Cena za osobę dla grup"
-              name="2.price"
+              name="kajak group"
               value={this.state.price}
               style={{ marginLeft: "10px" }}
               onChange={this.handleOnPriceChange}
+              required
             />
               <TextField
               variant="outlined"
               label="Cena za rower wodny"
-              name="3.price"
+              name="rowerek 4 osobowy"
               value={this.state.price}
               style={{ marginLeft: "10px" }}
               onChange={this.handleOnPriceChange}
+              required
             />
            
           </div>
@@ -155,6 +163,7 @@ handleOnSubmit = (event) => {
               name="city"
               value={this.state.city}
               onChange={this.handleOnLocationChange}
+              required
             />
             <TextField
               variant="outlined"
@@ -163,6 +172,7 @@ handleOnSubmit = (event) => {
               name="river"
               style={{ marginLeft: "10px" }}
               onChange={this.handleOnLocationChange}
+              required
             />
             <TextField
               variant="outlined"
@@ -171,6 +181,7 @@ handleOnSubmit = (event) => {
               style={{ marginLeft: "10px" }}
               name="postalCode"
               onChange={this.handleOnLocationChange}
+              required
             />
             <TextField
               variant="outlined"
@@ -178,6 +189,7 @@ handleOnSubmit = (event) => {
               value={this.state.street}
               style={{ marginLeft: "10px" }}
               onChange={this.handleOnLocationChange}
+              required
               name="street"
             />
             <TextField
@@ -187,6 +199,7 @@ handleOnSubmit = (event) => {
               style={{ marginLeft: "10px" }}
               onChange={this.handleLocationOnChange}
               name="streetNumber"
+              required
             />
           </div>
         </div>
@@ -198,12 +211,14 @@ handleOnSubmit = (event) => {
             style={{ marginTop: "10px", width: "100%" }}
             onChange={this.handleOnChange}
             name="description"
+            required
           />  <TextField
           variant="outlined"
           label="Dodaj adres URL zdjęcia"
           value={this.state.imageUrl}
           name="imageUrl"
           onChange={this.handleOnChange}
+          required
         />
         </div>
      
