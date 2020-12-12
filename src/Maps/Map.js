@@ -78,7 +78,14 @@ class Map extends React.Component {
             }}
           >
             <div>
-              <h4>Kajak</h4>
+              <h3> {this.state.selectedPlace.title} </h3>
+              <h5> {this.state.selectedPlace.description} </h5>
+              <hr/>
+              <p> {this.state.selectedPlace.location.city} </p>
+              <p> {this.state.selectedPlace.location.street} {this.state.selectedPlace.location.streetNumber}, {this.state.selectedPlace.location.postalCode} </p>
+              <p> Rzeka "{this.state.selectedPlace.location.river}" </p>
+              <p> Poziom {this.state.selectedPlace.level} </p>
+              <hr/>
               <RezervationForm/>
             </div>
           </InfoWindow>
