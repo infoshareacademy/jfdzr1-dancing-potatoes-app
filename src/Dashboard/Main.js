@@ -7,6 +7,9 @@ import {  withScriptjs, withGoogleMap } from 'react-google-maps';
 import Home from "../Home/Home";
 import OfferCards from '../Offerts/OfferCards';
 
+import RatingForm from '../Rating/AddRating'
+import RatingTable from "../Rating/RatingTable"
+
 function Main() {
         const classes = mainStyles();
         const WrappedMap = withScriptjs(withGoogleMap(Map));
@@ -18,10 +21,10 @@ function Main() {
                     <Route path = '/home'>
                         <Home />
                     </Route>
-{/* 
+
                     <Route path = '/ulubione'>
-                        <Typography paragraph> Ulubione </Typography>
-                    </Route> */}
+                        <RatingTable/>
+                    </Route>
 
                     <Route path = '/kayak'>
                        <OfferCards />
