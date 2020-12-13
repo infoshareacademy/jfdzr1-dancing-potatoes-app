@@ -46,39 +46,7 @@ export default function Popup(props) {
           </div>
         </DialogTitle>
         <DialogContent>{children}</DialogContent>
-        <div style={{
-          display: "flex",
-          justifyContent: "center"
-        }}>
-        <Button
-            component="div"
-            color="primary"
-            type="submit"
-            text="Dodaj"
-            className={classes.ButtonAdd}
-            style={{ 
-              width: "100px", 
-              margin: "3px" }}
-            onClick={() => {
-              setOpenPopup(false);
-            }}
- 
-          />
-          <Button
-            component="div"
-            type="reset"
-            color="primary"
-            text="Resetuj"
-            className={classes.ButtonReset}
-            style={{ 
-              width: "100px", 
-              margin: "3px" }}
-            onClick={() => {
-              setOpenPopup(false);
-            }}
-          
-          />
-          </div>
+        
       </Dialog>
     </ThemeProvider>
   );

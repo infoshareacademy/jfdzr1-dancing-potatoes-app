@@ -1,61 +1,108 @@
-import React, {Component} from 'react';
-import {Bar, Line, Pie} from 'react-chartjs-2';
+import React, { Component } from "react";
+import { Bar, Line, Pie } from "react-chartjs-2";
+const DATABASE_URL = "https://dancing-app-77d2a.firebaseio.com";
 
-class PieChart extends Component {
-
-  constructor(props) {
-      super(props);
-      this.state = {
-          chartData : {
-            labels: ['Kajaki jednoosobowe', 'Kajaki Wieloosobowe', 'Rowery wodne', 'Łodzie', 'Łodzie wioślarskie'],
-            datasets: [
-              {
-                label: "Population",
-                data: [
-                  443,
-                  314,
-                  256,
-                  82,
-                  25
-                ],
-                backgroundColor: 
-                ['#89C7CC',
-                '#04738D',
-                '#89C7CC',
-                '#04738D',
-                '#F1B71C',
-                ]
-              }
-            ]
-          }
-
-      }
+export default class PieChart extends Component {
+  state = {
+    chartData: {
+      labels: [
+        "1 ⭐",
+        "2 ⭐",
+        "3 ⭐",
+        "4 ⭐",
+        "5 ⭐",
+      ],
+      datasets: [
+        {
+          label: "Nasze oceny:",
+          data: [],
+          backgroundColor: [
+            "#89C7CC",
+            "#04738D",
+            "#89C7CC",
+            "#04738D",
+            "#F1B71C",
+          ],
+        },
+      ],
+    },
+  };
+  labels= ["1", "2", "3", "4", "5"];
+  componentDidMount() {
+    fetch(`${DATABASE_URL}/ratings.json`)
+      .then((response) => response.json())
+      .then((data) => {
+        const formattedData = Object.keys(data).map((key) => ({
+          id: key,
+          ...data[key],
+        }));
+        this.setState({
+          ratings: formattedData,
+        });
+      })
+      .then(this.filteringData);
   }
-    render () {
-
-      return (
-        <div className="chart"
-        style={{width: "500px", height: "400px"}}>
-            <Pie 
-            data={this.state.chartData}
-  
-            options={{
-              title: {
-                display: true,
-                text:'Nasze wypożyczalnie oferują',
-                fontSize: 25
-              },
-              legend: {
-                display: true,
-                position: 'right'
-              }
-            }}
-            />
-        </div>
-      )
-
+  filteringData = () => {
+    let dataRatings = this.labels.map((rate) => {
+    
+      return this.state.ratings.filter((element) => {
+        console.log(rate)
+        console.log(element.rate)
+        return element.rate == rate;
+      }).length;
+    });
+    
+    this.setState({
+      chartData: {
+        labels: [
+          "⭐",
+          "⭐⭐",
+          "⭐⭐⭐",
+          "⭐⭐⭐⭐",
+          "⭐⭐⭐⭐⭐",
+        ],
+        datasets: [
+          {
+            label: "Nasze oceny:",
+            data: dataRatings,
+            backgroundColor: [
+              "#89C7CC",
+              "#04738D",
+              "#89C7CC",
+              "#04738D",
+              "#F1B71C",
+            ],
+          },
+        ],
+      },
     }
+    )
 
+
+  }
+  render() {
+    return (
+      <div className="chart" style={{ width: "500px", height: "400px" }}>
+        <Pie
+          data={this.state.chartData}
+          options={{
+            title: {
+              display: true,
+              text: "Nasze oceny",
+              fontSize: 30,
+            },
+            legend: {
+              display: true,
+              position: "right",
+              
+            },
+            options:{
+              hoverBackgroundColor: false
+            }
+          }}
+        />
+      </div>
+    );
+  
 }
-
-export default PieChart;
+}
