@@ -39,7 +39,6 @@ class Map extends React.Component {
   componentDidMount() {
     this.fetchOffers()
   }
-
   
   render(){
     return (
