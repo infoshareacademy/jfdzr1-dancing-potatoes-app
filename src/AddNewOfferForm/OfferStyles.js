@@ -36,6 +36,9 @@ export const useStyles = makeStyles((theme) => ({
       right: 0,
       textAlign: "center",
     },
+    "& .MuiFormLabel-root-147": {
+      fontSize: "smaller"
+    },
     "& ButtonReset": {
       position: "absolute",
       marginLeft: "auto",
