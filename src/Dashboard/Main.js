@@ -5,6 +5,8 @@ import { withScriptjs, withGoogleMap } from "react-google-maps";
 import Home from "./Home/Home.js";
 import OfferCards from "./Offers/OfferCards.js";
 import Map from "./Map/Map.js";
+import Signup from "../SignupLogin/Signup.js";
+import Login from "../SignupLogin/Login.js";
 
 function Main() {
   const classes = mainStyles();
@@ -26,6 +28,12 @@ function Main() {
               containerElement={<div style={{ height: "100%" }} />}
               mapElement={<div style={{ height: "100%" }} />}
             />
+        </Route>
+        <Route path='/logowanie'>
+            <Login />
+        </Route>
+        <Route exact path='/rejestracja'>
+            <Signup />
         </Route>
       </Switch>
     </main>

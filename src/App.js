@@ -3,6 +3,7 @@ import Main from "./Dashboard/Main";
 import Nav from "./Navigation/Nav";
 import MuiThemeProvider from "@material-ui/core/styles/MuiThemeProvider";
 import { createMuiTheme } from "@material-ui/core/styles";
+import { AuthProvider } from "./contexts/AuthContext"
 
 const theme = createMuiTheme({
   palette: {
@@ -42,9 +43,11 @@ const theme = createMuiTheme({
 function App() {
   return (
     <MuiThemeProvider theme={theme}>
+      <AuthProvider>
       <Nav>
         <Main />
       </Nav>
+    </AuthProvider>
     </MuiThemeProvider>
   );
 }

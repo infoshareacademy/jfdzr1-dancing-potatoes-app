@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import clsx from "clsx";
 import { useTheme } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
@@ -8,6 +8,8 @@ import List from "@material-ui/core/List";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
+import VpnKeyIcon from '@material-ui/icons/VpnKey';
+import PersonIcon from "@material-ui/icons/Person";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ListItem from "@material-ui/core/ListItem";
@@ -57,6 +59,7 @@ function Nav({ children }) {
           >
             <MenuIcon />
           </IconButton>
+
           <Button
             text="Dodaj ofertę"
             color="white"
@@ -65,6 +68,20 @@ function Nav({ children }) {
             className={classes.newButton}
             onClick={() => setOpenPopup(true)}
           />
+          <List className={classes.loginButton}>
+            <ListItem button component={Link} to="/logowanie">
+              Logowanie
+              <ListItemIcon className={classes.personLogin}>
+                <PersonIcon />
+              </ListItemIcon>
+            </ListItem>
+            <ListItem button component={Link} to="/rejestracja">
+              Rejestracja
+              <ListItemIcon className={classes.personLogin}>
+                <VpnKeyIcon />
+              </ListItemIcon>
+            </ListItem>
+          </List>
         </Toolbar>
       </AppBar>
       <Drawer

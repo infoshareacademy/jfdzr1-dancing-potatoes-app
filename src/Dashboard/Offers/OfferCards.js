@@ -11,6 +11,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import RangeSlider from "./DifficultySliderbar";
+import "./offers.css"; 
 
 export default class Cards extends React.Component {
   state = {
@@ -18,18 +19,44 @@ export default class Cards extends React.Component {
     sorter: undefined,
     sortDirection: "",
     name: "",
-    level: "",
-    difficultyFilter: [],
+    level: ['łatwy', 'średni', 'trudny'],
     levelSortDirection: "",
   };
 
   handleChange = (event, newValue) => {
-    this.setState({
-      value: newValue,
-    });
 
-    console.log(this.state.value);
-  };
+      let newValueStringify = JSON.stringify(newValue);
+      if(newValueStringify === JSON.stringify([1,5])){
+        this.setState({
+          level: ['łatwy', 'średni', 'trudny'],
+        });
+      }
+      if(newValueStringify === JSON.stringify([3,5])){
+        this.setState({
+          level: ['średni', 'trudny'],
+        }); 
+      }
+      if(newValueStringify === JSON.stringify([5,5])){
+        this.setState({
+          level: ['trudny'],
+        });
+      }
+      if(newValueStringify === JSON.stringify([1,3])){
+        this.setState({
+          level: ['łatwy', 'średni'],
+        });
+      }
+      if(newValueStringify === JSON.stringify([3,3])){
+        this.setState({
+          level: ['średni'],
+        });
+      }
+      if(newValueStringify === JSON.stringify([1,1])){
+        this.setState({
+          level: ['łatwy'],
+        });
+      }
+    }
 
   sortByName = () => {
     if (this.state.sortDirection === "alphabetically") {
@@ -65,31 +92,12 @@ export default class Cards extends React.Component {
     });
   };
 
-  handleLevelChange = (level) => {
-    this.setState({
-      level: level.target.value,
-    });
-  };
-
-  handleSliderChange = (event, newValue) => {
-    this.setState({
-      difficultyFilter: newValue,
-    });
-  };
 
   render() {
     return (
       <>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateAreas: `
-            'filterInput slider sortByName sortByLevel'
-            `,
-            alignSelf: 'center',
-            width: '100%',
-          }}
-        >
+      <div className='background-coloring-div'>
+        <div className="offers-navigation-bar">
           <TextField
             label="Filtruj po nazwie"
             value={this.state.name}
@@ -97,27 +105,18 @@ export default class Cards extends React.Component {
               this.handleNameChange(name);
             }}
             variant="filled"
-            style={{
-              width: "100%",
-              height: "100%",
-              gridArea: "filterInput",
-              padding: 'auto 0',
-            }}
+            style={{ gridArea: "filterInput" }}
           />
           <RangeSlider
             handleChange={this.handleChange}
-            style={{ gridArea: "slider" }}
+            style={{ 
+              gridArea: "slider" ,
+             }}
           />
           <Button
-            component="div"
             variant="contained"
             color="secondary.light"
             style={{
-              // width: "200px",
-              // height: "50px",
-              // margin: "3px",
-              // textAlign: "center",
-              // marginLeft: "340px",
               gridArea: "sortByName",
             }}
             onClick={this.sortByName}
@@ -130,15 +129,9 @@ export default class Cards extends React.Component {
             Sortuj według nazwy
           </Button>
 
-
           <Button
-            component="div"
             variant="contained"
             style={{
-              // width: "200px",
-              // height: "50px",
-              // margin: "3px",
-              // textAlign: "center",
               gridArea: "sortByLevel",
             }}
             onClick={this.sortByLevel}
@@ -151,14 +144,21 @@ export default class Cards extends React.Component {
             Sortuj według trudności
           </Button>
         </div>
-
-        {this.state.offers
-          .sort(this.state.sorter)
-          .filter((offer) => offer.title.includes(this.state.name))
-          .filter((offer) => offer.level.includes(this.state.level))
-          .map((offer) => (
-            <OfferCard offer={offer} />
-          ))}
+      </div>
+        <div className='offers-dashboard'
+          style={{
+           
+          }}
+        >
+          {this.state.offers
+            .sort(this.state.sorter)
+            .filter((offer) => offer.title.includes(this.state.name))
+            .filter((offer) => {if(this.state.level.includes(offer.level))
+              {return offer}}) 
+            .map((offer) => (
+              <OfferCard offer={offer} />
+            ))}
+        </div>
       </>
     );
   }

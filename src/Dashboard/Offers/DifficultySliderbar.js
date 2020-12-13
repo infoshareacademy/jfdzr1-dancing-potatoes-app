@@ -1,14 +1,7 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/core/Slider';
-
-const useStyles = makeStyles({
-  root: {
-    width: 200,
-  },
-});
-
+import "./offers.css";
 
 export default function RangeSlider({handleChange}) {
   const marks = [
@@ -26,11 +19,13 @@ export default function RangeSlider({handleChange}) {
     },
   ];
 
-  const classes = useStyles();
-
   return (
 
-    <div className={classes.root}>
+    <div
+    style={{
+      textAlign: "center",
+    }}
+    >
       <Typography id="range-slider" gutterBottom>
         Poziom trudności
       </Typography>

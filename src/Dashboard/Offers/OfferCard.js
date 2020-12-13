@@ -9,6 +9,8 @@ import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import Slide from "@material-ui/core/Slide";
 import { Link } from "react-router-dom";
+import './offers.css'
+
 
 const Transition = forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -65,24 +67,28 @@ export default function OfferCard(props) {
     <div
       style={{
         display: "flex",
-        width: "320px",
+        width: "100%",
+        justifyContent: 'center',
       }}
     >
       <Card
         className="OffersContainer"
         style={{
           width: "100%",
-          height: "350px",
+          height: "100%",
           margin: "8px",
+          maxWidth: '360px',
         }}
       >
         <CardContent>
           <h2
             className="title"
             style={{
+              fontSize: '25px',
               marginTop: "-2px",
+              lineHeight: '20px',
               textAlign: "center",
-              marginBottom: "3px",
+              marginBottom: "25px",
             }}
           >
             {props.offer.title}
@@ -107,6 +113,9 @@ export default function OfferCard(props) {
             variant="contained"
             type="submit"
             onClick={handleClickOpen}
+            style={{
+              marginBottom: '5px',
+            }}
           />
           <Dialog
             open={open}

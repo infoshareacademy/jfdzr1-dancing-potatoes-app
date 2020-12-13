@@ -81,4 +81,15 @@ export const navStyles = makeStyles((theme) => ({
     position: "absolute",
     right: " 20px ",
   },
+  loginButton: {
+    display: 'flex',
+    color: 'white',
+  },
+  personLogin: {
+    height: '100%',
+    color: 'black',
+    backgroundColor: 'none',
+    display: 'flex',
+    justifyContent: 'center',
+  }
 }));
