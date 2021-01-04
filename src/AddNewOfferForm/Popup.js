@@ -10,14 +10,14 @@ import { useStyles } from "./OfferStyles";
 const theme = createMuiTheme({
   palette: {
     primary: {
-        light: '#8d6e63',
-        main: '#795548',
-        dark: '#4e342e',
+        light: '#ffffff',
+        main: '#ffffff',
+        dark: '#ffffff',
     },
     secondary: {
-        light: '#eeeeee',
-        main: '#9e9e9e',
-        dark: '#424242',
+        light: '#ffffff',
+        main: '#ffffff',
+        dark: '#ffffff',
     },
   contrastThreshold: 3,
   tonalOffset: 0.2,
@@ -36,7 +36,7 @@ export default function Popup(props) {
             </Typography>
 
             <ActionButton
-              color="primary"
+             
               onClick={() => {
                 setOpenPopup(false);
               }}

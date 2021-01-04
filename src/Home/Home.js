@@ -1,4 +1,3 @@
-
 import React from "react";
 import BarChart from "./BarChart";
 import PieChart from "./PieChart";
@@ -9,7 +8,7 @@ import { homeStyles } from "./Home-styles";
 import Carousel from "./carousel";
 import ScrollAnimation from "react-animate-on-scroll";
 import waterfall from "./images/waterfall.gif";
-import Typography from '@material-ui/core/Typography';
+import Typography from "@material-ui/core/Typography";
 import logoWhite from "./images/logoWhite.png";
 
 export default function Home() {
@@ -33,16 +32,16 @@ export default function Home() {
           }}
         >
           <div>
-
-<img src={logoWhite}
-style={{
-  position: "absolute",
-  top: "40%",
-  left: "50%",
-  transform:"translate(-50%, -50%)",
-  zIndex: 1,
-
-}}/>
+            <img
+              src={logoWhite}
+              style={{
+                position: "absolute",
+                top: "40%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+                zIndex: 1,
+              }}
+            />
 
             <img
               src={waterfall}
@@ -51,15 +50,21 @@ style={{
               width="100%"
               height="50%"
               style={{
-              position:"relative",
-              boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
-              left:"0px"}}
+                position: "relative",
+                boxShadow:
+                  "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+                left: "0px",
+              }}
             />
           </div>
         </div>
         <div
           className="ChartsHolder"
-          style={{ display: "flex", justifyContent: "space-between", marginTop: "-300px" }}
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            marginTop: "-300px",
+          }}
         >
           <div
             className="playerContainer"

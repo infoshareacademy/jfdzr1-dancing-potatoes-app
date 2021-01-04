@@ -15,74 +15,73 @@ import { CodeSharp, FontDownload, ImportantDevices } from "@material-ui/icons";
 const DATABASE_URL = "https://dancing-app-77d2a.firebaseio.com";
 
 export default class AddNewOfferForm extends React.Component {
-  constructor(props){
-    super(props)
-  this.state = {
-    title: "",
-    id: UUID.v4(),
-    offer: [
-      {
-        type: "kajak jednoosobowy",
-        numberOfPeople: 1,
-        price: "",
-      },
-      {
-        type: "kajak dwuosobowy",
-        numberOfPeople: 2,
-        price: "",
-      },
-      {
-        type: "kajak group",
-        numberOfPeople: 10,
-        price: "",
-      },
-      {
-        type: "rowerek 4 osobowy",
-        numberOfPeople: 4,
-        price: "",
-      },
-    ],
-    level: "",
-    location: {},
-    imageUrl: "",
-    description: "",
-  }
-  this.initialState={
-    title: "",
-    id: UUID.v4(),
-    offer: [
-      {
-        type: "kajak jednoosobowy",
-        numberOfPeople: 1,
-        price: "",
-      },
-      {
-        type: "kajak dwuosobowy",
-        numberOfPeople: 2,
-        price: "",
-      },
-      {
-        type: "kajak group",
-        numberOfPeople: 10,
-        price: "",
-      },
-      {
-        type: "rowerek 4 osobowy",
-        numberOfPeople: 4,
-        price: "",
-      },
-    ],
-    level: "",
-    location: {},
-    imageUrl: "",
-    description: "",
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      title: "",
+      id: UUID.v4(),
+      offer: [
+        {
+          type: "kajak jednoosobowy",
+          numberOfPeople: 1,
+          price: "",
+        },
+        {
+          type: "kajak dwuosobowy",
+          numberOfPeople: 2,
+          price: "",
+        },
+        {
+          type: "kajak group",
+          numberOfPeople: 10,
+          price: "",
+        },
+        {
+          type: "rowerek 4 osobowy",
+          numberOfPeople: 4,
+          price: "",
+        },
+      ],
+      level: "",
+      location: {},
+      imageUrl: "",
+      description: "",
+    };
+    this.initialState = {
+      title: "",
+      id: UUID.v4(),
+      offer: [
+        {
+          type: "kajak jednoosobowy",
+          numberOfPeople: 1,
+          price: "",
+        },
+        {
+          type: "kajak dwuosobowy",
+          numberOfPeople: 2,
+          price: "",
+        },
+        {
+          type: "kajak group",
+          numberOfPeople: 10,
+          price: "",
+        },
+        {
+          type: "rowerek 4 osobowy",
+          numberOfPeople: 4,
+          price: "",
+        },
+      ],
+      level: "",
+      location: {},
+      imageUrl: "",
+      description: "",
+    };
   }
   handleFormReset = () => {
-    this.setState({state: this.initialState})
-    console.log(this.initialState)
-
-  }
+    this.setState({ state: this.initialState });
+    console.log(this.initialState);
+  };
   handleOnChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value,
@@ -119,7 +118,6 @@ export default class AddNewOfferForm extends React.Component {
     });
   };
 
-  
   render() {
     const { setOpenPopup } = this.props;
     return (
@@ -340,12 +338,13 @@ export default class AddNewOfferForm extends React.Component {
         >
           <Button
             component="div"
-            color="primary"
             type="submit"
             text="Dodaj"
             style={{
               width: "100px",
               margin: "3px",
+              color: "rgb(255, 255, 255)",
+              backgroundColor: "rgb(15, 4, 35)",
             }}
             onClick={this.handleOnSubmit}
           />
@@ -357,6 +356,8 @@ export default class AddNewOfferForm extends React.Component {
             style={{
               width: "100px",
               margin: "3px",
+              color: "rgb(255, 255, 255)",
+              backgroundColor: "rgb(15, 4, 35)",
             }}
             onClick={this.handleFormReset}
           />
